@@ -15,6 +15,8 @@ if ($request_path !== '/' && is_file($root_file)) {
     exit;
 }
 
+$public_path = __DIR__ . '/dist/public';
+
 // Verifica se o arquivo solicitado existe na pasta dist/public (assets, imagens)
 $file = $public_path . $request_path;
 if ($request_path !== '/' && is_file($file)) {
