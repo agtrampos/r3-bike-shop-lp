@@ -17,7 +17,7 @@ export default function Home() {
               <span className="text-white font-bold text-lg">R3</span>
             </div>
             <span className="font-montserrat font-bold text-lg text-foreground hidden sm:inline">
-              R3 Bike Shop
+              R3 Bike Shop & Oficina
             </span>
           </div>
           <a
@@ -37,7 +37,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <h1 className="font-montserrat font-bold text-4xl md:text-5xl text-foreground mb-6 leading-tight">
-                Manutencao e Venda de Bikes com Qualidade e Confianca
+                Oficina Especializada e Venda de Bikes
               </h1>
               <p className="text-lg text-muted-foreground mb-4">
                 Atendimento rapido, pecas originais e suporte especializado na Zona Norte de Sao Paulo.
@@ -246,7 +246,7 @@ export default function Home() {
                 Bikes e Acessorios
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                Confira alguns itens disponiveis em nossa loja. Fazemos entregas na regiao!
+                Confira alguns itens disponiveis em nossa loja. <strong>Fazemos entregas em toda a Zona Norte!</strong>
               </p>
             </div>
             <a href={whatsappLink} className="text-primary font-bold flex items-center gap-2 hover:underline">
@@ -420,57 +420,26 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-foreground text-background py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="font-montserrat font-bold text-lg mb-4">R3 Bike Shop</h3>
-              <p className="text-background/80 text-sm">
-                Manutencao e venda de bicicletas com qualidade, confianca e atendimento rapido na Zona Norte de Sao Paulo.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-montserrat font-bold text-lg mb-4">Contato</h3>
-              <ul className="space-y-2 text-sm text-background/80">
-                <li>
-                  <a href="tel:+5511939065111" className="hover:text-background transition-colors">
-                    (11) 9 3906-5111
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:ramersonninga@yahoo.com.br" className="hover:text-background transition-colors">
-                    ramersonninga@yahoo.com.br
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="font-montserrat font-bold text-lg mb-4">Localizacao</h3>
-              <p className="text-background/80 text-sm">
-                Rua Conselheiro Moreira de Barros, 3809<br />
-                Lauzane Paulista - Sao Paulo/SP
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-background/20 pt-8 text-center text-sm text-background/60">
-            <p>
-              2026 R3 Bike Shop. Todos os direitos reservados. | Manutencao de bicicletas em Sao Paulo
-            </p>
-          </div>
+      {/* Footer Simples */}
+      <footer className="py-8 bg-white border-t border-border">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-muted-foreground text-sm">
+            © {new Date().getFullYear()} R3 Bike Shop - Lauzane Paulista, Zona Norte, São Paulo/SP. Todos os direitos reservados.
+          </p>
         </div>
       </footer>
 
-      {/* Botao Flutuante WhatsApp */}
+      {/* Botão Flutuante WhatsApp */}
       <a
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
-        title="Falar no WhatsApp"
+        aria-label="Falar no WhatsApp"
       >
-        <MessageCircle size={32} fill="currentColor" />
-        <span className="absolute right-full mr-4 bg-white text-foreground px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-border">
-          Falar com a Oficina
+        <MessageCircle size={32} />
+        <span className="absolute right-full mr-3 bg-white text-gray-800 px-3 py-1 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-md pointer-events-none">
+          Falar com Especialista
         </span>
       </a>
     </div>
