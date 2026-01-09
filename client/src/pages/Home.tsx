@@ -1,5 +1,6 @@
 import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -532,10 +533,10 @@ export default function Home() {
             <div>
               <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Institucional</h4>
               <ul className="space-y-4">
-                <li><a href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-lg">Política de Privacidade</a></li>
-                <li><a href="/cookies" className="text-gray-400 hover:text-white transition-colors text-lg">Política de Cookies</a></li>
-                <li><a href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-lg">Aviso Legal</a></li>
-                <li><a href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-lg">Termos de Serviço</a></li>
+                <li><Link href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Política de Privacidade</Link></li>
+                <li><Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Política de Cookies</Link></li>
+                <li><Link href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Aviso Legal</Link></li>
+                <li><Link href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Termos de Serviço</Link></li>
               </ul>
             </div>
 
