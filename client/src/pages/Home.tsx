@@ -50,12 +50,12 @@ export default function Home() {
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
             <span className="font-montserrat font-bold text-xl text-black hidden sm:inline uppercase tracking-tight">
               R3 Bike Shop
             </span>
-          </div>
+          </a>
           <div className="flex items-center gap-4">
             <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#F97316] transition-colors">
               <Instagram size={24} />
@@ -378,10 +378,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
             <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-3 mb-8">
+              <a href="/" className="flex items-center gap-3 mb-8 hover:opacity-80 transition-opacity inline-flex">
                 <img src={logoUrl} alt="R3 Bike Shop" className="h-16 w-auto bg-white rounded-lg p-1" />
                 <span className="font-montserrat font-black text-3xl uppercase italic tracking-tight">R3 BIKE SHOP</span>
-              </div>
+              </a>
               <p className="text-gray-400 text-xl max-w-md leading-relaxed italic">
                 Sua oficina de confiança na Zona Norte de São Paulo. Paixão por bikes, compromisso com você.
               </p>
