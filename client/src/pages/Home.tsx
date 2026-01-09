@@ -41,12 +41,12 @@ export default function Home() {
   ];
 
   const partnerBrands = [
-    { name: "Shimano", logo: "https://logo.clearbit.com/shimano.com" },
-    { name: "SRAM", logo: "https://logo.clearbit.com/sram.com" },
-    { name: "RockShox", logo: "https://logo.clearbit.com/rockshox.com" },
-    { name: "Caloi", logo: "https://logo.clearbit.com/caloi.com.br" },
-    { name: "TSW", logo: "https://logo.clearbit.com/tswbike.com" },
-    { name: "First", logo: "https://logo.clearbit.com/firstbikes.com.br" }
+    { name: "Shimano", logo: "/logos/shimano.png" },
+    { name: "SRAM", logo: "/logos/sram.png" },
+    { name: "RockShox", logo: "/logos/rockshox.png" },
+    { name: "Caloi", logo: "/logos/caloi.png" },
+    { name: "TSW", logo: "/logos/tsw.png" },
+    { name: "First", logo: "/logos/first.png" }
   ];
 
   const googleReviews = [
