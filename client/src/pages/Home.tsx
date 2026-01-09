@@ -15,6 +15,7 @@ export default function Home() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+  const facadeUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.40-1-e1761917054642.jpeg"; // Using the professional office image as facade
 
   const deliveryImages = [
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
@@ -28,6 +29,30 @@ export default function Home() {
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
+  ];
+
+  const storeImages = [
+    "https://lh3.googleusercontent.com/p/AF1QipO5XjLHq_wTWdBJ8Ych5Pcu3V2_D0YJKkfwIv7T=w408-h240-k-no-pi-10-ya300-ro0-fo100",
+    "https://lh3.googleusercontent.com/geougc/AF1QipPjT8mG_maVACSOR6KbMYsnjaG2jNFsGMxDbvnK=h305-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipNRS31fUnGUtciWPHSm3RADDoDW4nsLXV_-3C6I=h305-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipMissoeOZAxaxnojqtqXQjoc7VgikxWhWHbK77p=h305-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipOFnWmT9SIs3UewYxkyWjFKah9oDbv_eEQIie2S=h305-no",
+    "https://lh3.googleusercontent.com/geougc/AF1QipO-9AW5jUmfG29K9Wnxn2fApukvjvou35yHKKvJ=h305-no"
+  ];
+
+  const partnerBrands = [
+    { name: "Shimano", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Shimano_logo.svg/1280px-Shimano_logo.svg.png" },
+    { name: "SRAM", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/SRAM_logo.svg/1280px-SRAM_logo.svg.png" },
+    { name: "RockShox", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RockShox_logo.svg/1280px-RockShox_logo.svg.png" },
+    { name: "Caloi", logo: "https://upload.wikimedia.org/wikipedia/pt/thumb/9/91/Logo_Caloi.svg/1200px-Logo_Caloi.svg.png" },
+    { name: "TSW", logo: "https://tswbike.com/wp-content/uploads/2019/12/logo-tsw-bike-preto.png" },
+    { name: "First", logo: "https://firstbikes.com.br/wp-content/uploads/2021/05/logo-first-bikes.png" }
+  ];
+
+  const googleReviews = [
+    { text: "Loja top, atendimento excelente e produtos de alta qualidade. Super recomendo.", author: "Google User" },
+    { text: "Lugar aconchegante e acolhedor, profissionais de ponta com muita experiência.", author: "Google User" },
+    { text: "Qualidade, variedade e preço acessível para todos os gostos.", author: "Google User" }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -373,68 +398,183 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Marcas Parceiras Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-montserrat font-black text-3xl md:text-4xl text-black mb-12 uppercase italic">Trabalhamos com as <span className="text-[#F97316]">Melhores Marcas</span></h2>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            {partnerBrands.map((brand, index) => (
+              <img key={index} src={brand.logo} alt={brand.name} className="h-10 md:h-12 w-auto object-contain" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Nossa Loja por Dentro Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
+          <p className="text-gray-600 text-xl italic mb-12">Um espaço completo para cuidar da sua paixão.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="md:col-span-2 md:row-span-2">
+              <img src={facadeUrl} alt="Fachada R3 Bike Shop" className="w-full h-full object-cover rounded-2xl shadow-xl border-4 border-white" />
+            </div>
+            {storeImages.map((img, index) => (
+              <img key={index} src={img} alt={`Interior R3 Bike Shop ${index + 1}`} className="w-full h-64 object-cover rounded-2xl shadow-lg border-2 border-white hover:scale-105 transition-transform" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Avaliações do Google Section */}
+      <section className="py-24 bg-black text-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliação dos <span className="text-[#F97316]">Clientes</span></h2>
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-8 h-8" />
+              <div className="text-2xl font-black">5,0 ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {googleReviews.map((review, index) => (
+              <div key={index} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[#F97316]/50 transition-colors">
+                <p className="text-xl italic mb-6 text-gray-300 leading-relaxed">"{review.text}"</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-[#F97316] rounded-full flex items-center justify-center font-black">G</div>
+                  <div>
+                    <p className="font-black uppercase italic text-sm">{review.author}</p>
+                    <div className="flex text-[#F97316] gap-0.5">
+                      {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Nota 5,0 no Google • 315 avaliações</p>
+            <a 
+              href="https://www.google.com/maps/place/R3+Bike+Shop" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black hover:bg-[#F97316] hover:text-white transition-all uppercase italic shadow-2xl"
+            >
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-6 h-6" />
+              Ver Todas no Google
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Melhorado */}
-      <footer className="bg-black text-white pt-24 pb-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
-            <div className="col-span-1 md:col-span-2">
-              <a href="/" className="flex items-center gap-3 mb-8 hover:opacity-80 transition-opacity inline-flex">
-                <img src={logoUrl} alt="R3 Bike Shop" className="h-16 w-auto bg-white rounded-lg p-1" />
-                <span className="font-montserrat font-black text-3xl uppercase italic tracking-tight">R3 BIKE SHOP</span>
+      <footer className="bg-black text-white pt-24 pb-12 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F97316] to-transparent opacity-30"></div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            {/* Brand Column */}
+            <div className="col-span-1 md:col-span-1">
+              <a href="/" className="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
+                <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-16 w-auto" />
+                <span className="font-montserrat font-bold text-2xl text-white uppercase tracking-tight italic">
+                  R3 <span className="text-[#F97316]">Bike</span>
+                </span>
               </a>
-              <p className="text-gray-400 text-xl max-w-md leading-relaxed italic">
-                Sua oficina de confiança na Zona Norte de São Paulo. Paixão por bikes, compromisso com você.
+              <p className="text-gray-400 text-lg mb-8 leading-relaxed italic">
+                Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
               </p>
-              <div className="flex gap-4 mt-8">
-                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-[#F97316] rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-lg shadow-[#F97316]/20">
-                  <Instagram size={24} />
+              <div className="flex gap-4">
+                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Instagram className="text-white group-hover:scale-110" size={22} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all">
-                  <Facebook size={24} />
+                <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Facebook className="text-white group-hover:scale-110" size={22} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all">
-                  <Youtube size={24} />
+                <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Youtube className="text-white group-hover:scale-110" size={22} />
                 </a>
               </div>
             </div>
 
+            {/* Quick Links */}
             <div>
-              <h4 className="font-black text-xl uppercase italic mb-8 border-b-2 border-[#F97316] inline-block">Navegação</h4>
-              <ul className="space-y-4 text-lg">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Início</a></li>
-                <li><a href="#sobre" className="text-gray-400 hover:text-white transition-colors">Quem Somos</a></li>
-                <li><a href={whatsappLink} className="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
-                <li><a href={whatsappLink} className="text-gray-400 hover:text-white transition-colors">Orçamento</a></li>
+              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Links Úteis</h4>
+              <ul className="space-y-4">
+                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors text-lg">Início</a></li>
+                <li><a href="#sobre" className="text-gray-400 hover:text-white transition-colors text-lg">Quem Somos</a></li>
+                <li><a href="#servicos" className="text-gray-400 hover:text-white transition-colors text-lg">Serviços</a></li>
+                <li><a href="#localizacao" className="text-gray-400 hover:text-white transition-colors text-lg">Localização</a></li>
               </ul>
             </div>
 
+            {/* Legal Links */}
             <div>
-              <h4 className="font-black text-xl uppercase italic mb-8 border-b-2 border-[#F97316] inline-block">Contato</h4>
-              <ul className="space-y-4 text-lg">
-                <li className="flex items-center gap-3 text-gray-400">
-                  <Phone size={18} className="text-[#F97316]" />
-                  (11) 93906-5111
+              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Institucional</h4>
+              <ul className="space-y-4">
+                <li><a href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-lg">Política de Privacidade</a></li>
+                <li><a href="/cookies" className="text-gray-400 hover:text-white transition-colors text-lg">Política de Cookies</a></li>
+                <li><a href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-lg">Aviso Legal</a></li>
+                <li><a href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-lg">Termos de Serviço</a></li>
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div>
+              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Contato</h4>
+              <ul className="space-y-6">
+                <li className="flex items-start gap-4 text-gray-400 group">
+                  <MapPin size={22} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP - CEP: 02430-002</span>
                 </li>
-                <li className="flex items-start gap-3 text-gray-400">
-                  <MapPin size={18} className="text-[#F97316] mt-1 shrink-0" />
-                  <span>Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP</span>
+                <li className="flex items-center gap-4 text-gray-400 group">
+                  <Mail size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
+                  <span className="text-lg">ramersonninga@yahoo.com.br</span>
                 </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <MessageCircle size={18} className="text-[#F97316]" />
-                  ramersonninga@yahoo.com.br
+                <li className="flex items-center gap-4 text-gray-400 group">
+                  <Phone size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
+                  <span className="text-lg font-bold">(11) 93906-5111</span>
                 </li>
-                <li className="flex items-center gap-3 text-xs text-gray-500 font-bold uppercase tracking-tighter">
-                  CNPJ: 54.875.734/0001-43
+                <li className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-gray-500 font-bold uppercase tracking-tighter">
+                    CNPJ: 54.875.734/0001-43
+                  </p>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-white/10 pt-12 text-center text-gray-500 text-sm font-bold uppercase tracking-widest">
-            <p>© {new Date().getFullYear()} R3 BIKE SHOP & OFICINA. TODOS OS DIREITOS RESERVADOS.</p>
-            <p className="mt-2 text-[10px] opacity-30">DESENVOLVIDO COM FOCO EM PERFORMANCE</p>
+          {/* Copyright */}
+          <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-gray-500 text-sm font-medium uppercase tracking-widest text-center md:text-left">
+              © {new Date().getFullYear()} R3 BIKE SHOP - TODOS OS DIREITOS RESERVADOS
+            </p>
+            <div className="flex items-center gap-2 text-gray-500 text-sm font-bold uppercase">
+              <span>Desenvolvido por</span>
+              <span className="text-white hover:text-[#F97316] transition-colors cursor-pointer">R3 BIKE TECH</span>
+            </div>
           </div>
         </div>
+
+        {/* Floating Google Review Button */}
+        <a 
+          href="https://www.google.com/maps/place/R3+Bike+Shop" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="fixed bottom-32 right-8 bg-white rounded-full px-5 py-3 flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-[9999] border border-gray-100 group"
+        >
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-7 h-7" />
+          <div className="flex flex-col">
+            <span className="text-[13px] font-black text-black leading-none uppercase italic">5,0 ★ no Google</span>
+            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">315 avaliações</span>
+          </div>
+          <div className="w-8 h-8 bg-gray-50 rounded-full flex items-center justify-center group-hover:bg-[#F97316] transition-colors">
+            <Star size={14} className="text-[#F97316] group-hover:text-white" fill="currentColor" />
+          </div>
+        </a>
       </footer>
 
       {/* Floating WhatsApp */}
