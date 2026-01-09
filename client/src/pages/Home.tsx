@@ -1,4 +1,4 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone } from "lucide-react";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Calendar } from "lucide-react";
 import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 
 export default function Home() {
@@ -106,7 +106,7 @@ export default function Home() {
               Nossos Servicos
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trabalhamos com foco em seguranca, desempenho e durabilidade da sua bike.
+              Trabalhamos com foco em seguranca, desempenho e durabilidade da sua bike. Atendemos Lauzane Paulista e toda Zona Norte.
             </p>
           </div>
 
@@ -237,6 +237,78 @@ export default function Home() {
       </section>
 
       <BeforeAfterGallery />
+
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+            <div>
+              <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 text-left">
+                Bikes e Acessorios
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl">
+                Confira alguns itens disponiveis em nossa loja. Fazemos entregas na regiao!
+              </p>
+            </div>
+            <a href={whatsappLink} className="text-primary font-bold flex items-center gap-2 hover:underline">
+              Ver catalogo completo <ArrowRight size={20} />
+            </a>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Produto 1 */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
+              <div className="aspect-square bg-muted relative">
+                <img src="/images/hero-bike-shop.jpg" alt="Bicicleta Mountain Bike" className="object-cover w-full h-full" />
+                <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">Destaque</span>
+              </div>
+              <div className="p-6">
+                <h3 className="font-montserrat font-bold text-xl mb-2">Mountain Bike Aro 29</h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Ideal para trilhas e uso urbano. Quadro em aluminio, freio a disco e 21 marchas.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-primary">R$ 1.890,00</span>
+                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <ShoppingCart size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Produto 2 */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
+              <div className="aspect-square bg-muted relative">
+                <img src="/images/bike-accessories.jpg" alt="Capacete Profissional" className="object-cover w-full h-full" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-montserrat font-bold text-xl mb-2">Kit Acessorios Premium</h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Capacete, lanternas LED e suporte de caramanhola. Seguranca completa para voce.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-primary">R$ 249,00</span>
+                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <ShoppingCart size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Produto 3 */}
+            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
+              <div className="aspect-square bg-muted relative">
+                <img src="/images/maintenance-service.jpg" alt="Kit de Limpeza" className="object-cover w-full h-full" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-montserrat font-bold text-xl mb-2">Revisao Geral</h3>
+                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Limpeza completa, lubrificacao e regulagem total. Sua bike nova de novo.</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-2xl font-bold text-primary">R$ 150,00</span>
+                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
+                    <Calendar size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
@@ -387,6 +459,20 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Botao Flutuante WhatsApp */}
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
+        title="Falar no WhatsApp"
+      >
+        <MessageCircle size={32} fill="currentColor" />
+        <span className="absolute right-full mr-4 bg-white text-foreground px-4 py-2 rounded-lg text-sm font-bold shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-border">
+          Falar com a Oficina
+        </span>
+      </a>
     </div>
   );
 }
