@@ -6,11 +6,17 @@
 $request = $_SERVER['REQUEST_URI'];
 $request_path = parse_url($request, PHP_URL_PATH);
 
-// Agora o caminho é direto, pois o index.php estará na mesma pasta que a 'dist'
-$public_path = __DIR__ . '/dist/public';
+// Verifica se o arquivo existe na raiz (ex: teste.php)
+$root_file = __DIR__ . $request_path;
+if ($request_path !== '/' && is_file($root_file)) {
+    $mime = mime_content_type($root_file);
+    header("Content-Type: $mime");
+    readfile($root_file);
+    exit;
+}
 
+// Verifica se o arquivo solicitado existe na pasta dist/public (assets, imagens)
 $file = $public_path . $request_path;
-
 if ($request_path !== '/' && is_file($file)) {
     $mime = mime_content_type($file);
     if (str_ends_with($request_path, '.js')) $mime = 'application/javascript';
