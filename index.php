@@ -1,23 +1,30 @@
 <?php
 /**
- * Redireciona o tráfego para a pasta de build do Vite
+ * Hostinger Bridge - Direciona o tráfego da raiz para dist/public
  */
-$request = $_SERVER['REQUEST_URI'];
 
-// Caminho para a pasta pública do build
+$request = $_SERVER['REQUEST_URI'];
+$request_path = parse_url($request, PHP_URL_PATH);
+
+// Agora o caminho é direto, pois o index.php estará na mesma pasta que a 'dist'
 $public_path = __DIR__ . '/dist/public';
 
-// Verifica se o arquivo solicitado existe na pasta dist/public
-$file = $public_path . $request;
+$file = $public_path . $request_path;
 
-if (is_file($file)) {
-    // Se for um arquivo real (imagem, css, js), serve o arquivo
+if ($request_path !== '/' && is_file($file)) {
     $mime = mime_content_type($file);
+    if (str_ends_with($request_path, '.js')) $mime = 'application/javascript';
+    if (str_ends_with($request_path, '.css')) $mime = 'text/css';
+    
     header("Content-Type: $mime");
     readfile($file);
     exit;
 }
 
-// Caso contrário, serve o index.html (para rotas do React)
-include($public_path . '/index.html');
+if (is_file($public_path . '/index.html')) {
+    include($public_path . '/index.html');
+} else {
+    echo "Site em manutenção. (Build não encontrado)";
+    http_response_code(404);
+}
 ?>
