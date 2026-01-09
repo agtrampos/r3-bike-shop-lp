@@ -247,9 +247,9 @@ export default function Home() {
             {/* Manutenção */}
             <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <img 
-                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.56.08-e1761916935198.jpeg" 
+                src="/uploads/R3(7).jpg" 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
-                alt="Conserto e Manutenção"
+                alt="Conserto e Peças"
               />
               <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
                 <Package className="text-[#F97316] mb-4" size={32} />
