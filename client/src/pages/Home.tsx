@@ -554,7 +554,14 @@ export default function Home() {
             </p>
             <div className="flex items-center gap-2 text-gray-500 text-sm font-bold uppercase">
               <span>Desenvolvido por</span>
-              <span className="text-white hover:text-[#F97316] transition-colors cursor-pointer">R3 BIKE TECH</span>
+              <a 
+                href="https://agenciatrampos.vercel.app" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-white hover:text-[#F97316] transition-colors"
+              >
+                Agência Trampos
+              </a>
             </div>
           </div>
         </div>
