@@ -2,6 +2,7 @@
   "name": "r3-bike-shop-lp",
   "version": "1.0.0",
   "type": "module",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "dev": "vite --host",
