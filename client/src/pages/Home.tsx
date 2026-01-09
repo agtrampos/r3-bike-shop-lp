@@ -41,12 +41,12 @@ export default function Home() {
   ];
 
   const partnerBrands = [
-    { name: "Shimano", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/shimano-logo.png" },
-    { name: "SRAM", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/sram-logo.png" },
-    { name: "RockShox", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/rockshox-logo.png" },
-    { name: "Caloi", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/caloi-logo.png" },
-    { name: "TSW", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/tsw-logo.png" },
-    { name: "First", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/first-logo.png" }
+    { name: "Shimano", logo: "https://logo.clearbit.com/shimano.com" },
+    { name: "SRAM", logo: "https://logo.clearbit.com/sram.com" },
+    { name: "RockShox", logo: "https://logo.clearbit.com/rockshox.com" },
+    { name: "Caloi", logo: "https://logo.clearbit.com/caloi.com.br" },
+    { name: "TSW", logo: "https://logo.clearbit.com/tswbike.com" },
+    { name: "First", logo: "https://logo.clearbit.com/firstbikes.com.br" }
   ];
 
   const googleReviews = [
