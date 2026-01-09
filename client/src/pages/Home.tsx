@@ -1,5 +1,11 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Calendar } from "lucide-react";
-import BeforeAfterGallery from "@/components/BeforeAfterGallery";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft } from "lucide-react";
+import { useState, useEffect } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function Home() {
   const whatsappNumber = "5511939065111";
@@ -7,11 +13,41 @@ export default function Home() {
     "Ola! Gostaria de mais informacoes sobre os servicos de manutencao e venda de bicicletas da R3 Bike Shop."
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
+  const instagramLink = "https://www.instagram.com/r3bikeshop";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+
+  const deliveryImages = [
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-e1761915696692.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-2-e1761915925151.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-1-e1761915952803.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.39-e1761915976372.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-3-e1761916003786.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-2-e1761916028777.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.53-e1761916068449.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.48.52-e1761916085537.jpeg",
+    "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-10.00.09-e1761916105228.jpeg"
+  ];
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % deliveryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + deliveryImages.length) % deliveryImages.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white text-foreground">
+      {/* Header */}
       <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -20,412 +56,316 @@ export default function Home() {
               R3 Bike Shop & Oficina
             </span>
           </div>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
-          >
-            <MessageCircle size={18} />
-            <span className="hidden sm:inline">Falar no WhatsApp</span>
-          </a>
+          <div className="flex items-center gap-4">
+            <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <Instagram size={24} />
+            </a>
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
+            >
+              <MessageCircle size={18} />
+              <span className="hidden sm:inline">WhatsApp</span>
+            </a>
+          </div>
         </div>
       </header>
 
-      <section className="relative overflow-hidden bg-white">
-        <div className="container mx-auto px-4 py-16 md:py-24">
+      {/* Hero / Quem Somos */}
+      <section className="relative overflow-hidden bg-white pt-16 pb-24">
+        <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
+            <div>
+              <span className="inline-block bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-bold mb-4">
+                Zona Norte de São Paulo
+              </span>
               <h1 className="font-montserrat font-bold text-4xl md:text-5xl text-foreground mb-6 leading-tight">
-                Oficina Especializada e Venda de Bikes
+                Quem Somos
               </h1>
-              <p className="text-lg text-muted-foreground mb-4">
-                Atendimento rapido, pecas originais e suporte especializado na Zona Norte de Sao Paulo.
-              </p>
-              <p className="text-base text-muted-foreground mb-8">
-                Tudo o que sua bike precisa em um so lugar: revisao, manutencao e acessorios com preco justo.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href={whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-montserrat font-bold text-lg hover:shadow-lg transition-shadow"
-                >
+              <div className="space-y-4 text-lg text-muted-foreground">
+                <p>
+                  A <strong>R3 Bike Shop</strong> é especializada em <strong>venda e manutenção de bicicletas</strong> na Zona Norte de São Paulo.
+                </p>
+                <p>
+                  Com uma equipe experiente e apaixonada por bikes, oferecemos serviços de revisão completa, regulagem, troca de peças e personalização.
+                </p>
+                <p>
+                  Nosso objetivo é garantir que cada cliente tenha segurança, conforto e desempenho na pedalada, seja no lazer ou no esporte.
+                </p>
+                <p>
+                  Atendemos com transparência e compromisso para que você tenha uma experiência de confiança e qualidade em cada visita.
+                </p>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a href={whatsappLink} className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all">
                   <MessageCircle size={20} />
-                  Solicitar Orcamento
-                </a>
-                <a
-                  href="tel:+5511939065111"
-                  className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-8 py-4 rounded-lg font-montserrat font-bold text-lg hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  <Phone size={20} />
-                  Ligar Agora
+                  Solicitar Orçamento
                 </a>
               </div>
             </div>
-
-            <div className="order-1 md:order-2">
+            <div className="relative">
               <img
-                src="/images/hero-bike-shop.jpg"
-                alt="R3 Bike Shop - Oficina profissional de bicicletas"
-                className="w-full h-auto rounded-lg shadow-lg object-cover"
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.40-1-e1761917054642.jpeg"
+                alt="R3 Bike Shop Oficina"
+                className="w-full h-[500px] object-cover rounded-2xl shadow-2xl"
               />
+              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl hidden md:block">
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Star className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <p className="font-bold text-xl">Qualidade R3</p>
+                    <p className="text-sm text-muted-foreground">Especialistas em performance</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-muted py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">100%</div>
-              <p className="text-sm text-muted-foreground">Atendimento Local</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">+</div>
-              <p className="text-sm text-muted-foreground">Clientes Satisfeitos</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">+</div>
-              <p className="text-sm text-muted-foreground">Servico Profissional</p>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-              <p className="text-sm text-muted-foreground">Suporte WhatsApp</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
+      {/* Seção Conheça Nossos Serviços */}
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4">
-              Nossos Servicos
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Trabalhamos com foco em seguranca, desempenho e durabilidade da sua bike. Atendemos Lauzane Paulista e toda Zona Norte.
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl mb-4">Conheça Nossos Serviços</h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Atendemos São Paulo/SP e região, com serviços especializados em venda, manutenção e revisão completa de bicicletas.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white border border-border rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Wrench className="text-primary-foreground" size={24} />
-              </div>
-              <h3 className="font-montserrat font-bold text-xl text-foreground mb-3">
-                Manutencao e Revisao
-              </h3>
-              <p className="text-muted-foreground">
-                Revisao completa, regulagem de cambio, freios, corrente e todos os componentes da sua bicicleta.
-              </p>
-            </div>
-
-            <div className="bg-white border border-border rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Package className="text-primary-foreground" size={24} />
-              </div>
-              <h3 className="font-montserrat font-bold text-xl text-foreground mb-3">
-                Troca e Ajuste de Pecas
-              </h3>
-              <p className="text-muted-foreground">
-                Substituicao de pneus, camaras, correntes, freios e outros componentes com pecas originais.
-              </p>
-            </div>
-
-            <div className="bg-white border border-border rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-primary-foreground" size={24} />
-              </div>
-              <h3 className="font-montserrat font-bold text-xl text-foreground mb-3">
-                Venda de Bicicletas
-              </h3>
-              <p className="text-muted-foreground">
-                Bicicletas de qualidade com preco justo. Modelos para iniciantes, passeio e esporte.
-              </p>
-            </div>
-
-            <div className="bg-white border border-border rounded-lg p-8 hover:shadow-lg transition-shadow">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
-                <Star className="text-primary-foreground" size={24} />
-              </div>
-              <h3 className="font-montserrat font-bold text-xl text-foreground mb-3">
-                Suporte Especializado
-              </h3>
-              <p className="text-muted-foreground">
-                Atendimento para ciclistas iniciantes e experientes. Dicas e orientacoes profissionais.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-secondary-foreground mb-12 text-center">
-            Por Que Escolher a R3 Bike Shop?
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary-foreground font-bold">+</span>
-                </div>
-                <div>
-                  <h3 className="font-montserrat font-bold text-lg text-secondary-foreground mb-2">
-                    Atendimento Direto e Sem Enrolacao
-                  </h3>
-                  <p className="text-secondary-foreground/80">
-                    Falamos direto com voce pelo WhatsApp. Orcamento rapido e sem compromisso.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary-foreground font-bold">+</span>
-                </div>
-                <div>
-                  <h3 className="font-montserrat font-bold text-lg text-secondary-foreground mb-2">
-                    Servico Especializado
-                  </h3>
-                  <p className="text-secondary-foreground/80">
-                    Equipe experiente e apaixonada por bikes. Cada servico e feito com cuidado.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary-foreground font-bold">+</span>
-                </div>
-                <div>
-                  <h3 className="font-montserrat font-bold text-lg text-secondary-foreground mb-2">
-                    Transparencia nos Precos
-                  </h3>
-                  <p className="text-secondary-foreground/80">
-                    Sem surpresas. Voce sabe exatamente quanto vai pagar antes de comecar.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-primary-foreground font-bold">+</span>
-                </div>
-                <div>
-                  <h3 className="font-montserrat font-bold text-lg text-secondary-foreground mb-2">
-                    Foco em Resultado e Satisfacao
-                  </h3>
-                  <p className="text-secondary-foreground/80">
-                    Sua bike sai perfeita. Se nao ficar satisfeito, a gente resolve.
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Venda de Bicicletas */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.40-1-e1761917054642.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Venda de Bicicletas"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Venda de Bicicletas</h3>
               </div>
             </div>
 
-            <img
-              src="/images/maintenance-service.jpg"
-              alt="Manutencao profissional de bicicleta"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      <BeforeAfterGallery />
-
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-            <div>
-              <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-4 text-left">
-                Bikes e Acessorios
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl">
-                Confira alguns itens disponiveis em nossa loja. <strong>Fazemos entregas em toda a Zona Norte!</strong>
-              </p>
-            </div>
-            <a href={whatsappLink} className="text-primary font-bold flex items-center gap-2 hover:underline">
-              Ver catalogo completo <ArrowRight size={20} />
-            </a>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Produto 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
-              <div className="aspect-square bg-muted relative">
-                <img src="/images/hero-bike-shop.jpg" alt="Bicicleta Mountain Bike" className="object-cover w-full h-full" />
-                <span className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">Destaque</span>
-              </div>
-              <div className="p-6">
-                <h3 className="font-montserrat font-bold text-xl mb-2">Mountain Bike Aro 29</h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Ideal para trilhas e uso urbano. Quadro em aluminio, freio a disco e 21 marchas.</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-primary">R$ 1.890,00</span>
-                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <ShoppingCart size={20} />
-                  </a>
-                </div>
+            {/* Revisão Completa */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.39-e1761917118885.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Revisão Completa"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Revisão Completa</h3>
               </div>
             </div>
 
-            {/* Produto 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
-              <div className="aspect-square bg-muted relative">
-                <img src="/images/bike-accessories.jpg" alt="Capacete Profissional" className="object-cover w-full h-full" />
-              </div>
-              <div className="p-6">
-                <h3 className="font-montserrat font-bold text-xl mb-2">Kit Acessorios Premium</h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Capacete, lanternas LED e suporte de caramanhola. Seguranca completa para voce.</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-primary">R$ 249,00</span>
-                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <ShoppingCart size={20} />
-                  </a>
-                </div>
+            {/* Conserto e Manutenção */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.56.08-e1761916935198.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Conserto e Manutenção"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Conserto e Manutenção</h3>
               </div>
             </div>
 
-            {/* Produto 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-border">
-              <div className="aspect-square bg-muted relative">
-                <img src="/images/maintenance-service.jpg" alt="Kit de Limpeza" className="object-cover w-full h-full" />
+            {/* Peças e Componentes */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.49-3-e1761916956872.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Peças e Componentes"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Peças e Componentes</h3>
               </div>
-              <div className="p-6">
-                <h3 className="font-montserrat font-bold text-xl mb-2">Revisao Geral</h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">Limpeza completa, lubrificacao e regulagem total. Sua bike nova de novo.</p>
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-primary">R$ 150,00</span>
-                  <a href={whatsappLink} className="p-3 bg-primary/10 text-primary rounded-full hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <Calendar size={20} />
-                  </a>
-                </div>
+            </div>
+
+            {/* Acessórios para Bike */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.49-2-e1761916981362.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Acessórios para Bike"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Acessórios para Bike</h3>
+              </div>
+            </div>
+
+            {/* Serviço de Busca e Leva */}
+            <div className="group relative overflow-hidden rounded-xl bg-black aspect-[4/5]">
+              <img 
+                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.49-1-e1761917008308.jpeg" 
+                className="w-full h-full object-cover opacity-70 group-hover:scale-110 transition-transform duration-500" 
+                alt="Serviço de Busca e Leva"
+              />
+              <div className="absolute inset-0 flex items-end p-8 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-montserrat font-bold text-2xl uppercase tracking-wider">Serviço de Busca e Leva</h3>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Carrossel de Entregas */}
+      <section className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4">
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-12 text-center">
-            O Que Nossos Clientes Dizem
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl mb-4">Entregas e Clientes R3 Bike Shop</h2>
+            <p className="text-muted-foreground text-lg">Veja algumas das bicicletas entregues pela R3 Bike Shop em São Paulo.</p>
+          </div>
 
-          <div className="bg-primary text-primary-foreground rounded-lg p-8 md:p-12 max-w-2xl mx-auto text-center">
-            <div className="flex justify-center gap-1 mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} size={20} fill="currentColor" />
+          <div className="relative max-w-5xl mx-auto">
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl">
+              {deliveryImages.map((img, index) => (
+                <div 
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
+                >
+                  <img src={img} alt={`Entrega ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
               ))}
             </div>
-            <p className="text-lg md:text-xl mb-6 italic">
-              "Levei minha bike para revisao e ficou perfeita. Atendimento rapido e honesto. Recomendo!"
-            </p>
-            <p className="font-montserrat font-bold text-base">
-              Cliente Local - Sao Paulo/SP
-            </p>
+            
+            <button 
+              onClick={prevSlide}
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+            >
+              <ChevronLeft size={24} />
+            </button>
+            <button 
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+            >
+              <ChevronRight size={24} />
+            </button>
+
+            <div className="flex justify-center gap-2 mt-6">
+              {deliveryImages.map((_, index) => (
+                <button 
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${index === currentSlide ? 'bg-primary w-8' : 'bg-muted-foreground/30'}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-muted">
+      {/* Localização e Map */}
+      <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-foreground mb-12 text-center">
-            Localizacao e Atendimento
-          </h2>
-
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="bg-white rounded-lg p-8 shadow-sm">
-                <div className="flex gap-4 mb-6">
-                  <MapPin className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h3 className="font-montserrat font-bold text-lg text-foreground mb-2">
-                      Endereco
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Rua Conselheiro Moreira de Barros, 3809<br />
-                      Lauzane Paulista - Sao Paulo/SP
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 mb-6">
-                  <Phone className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h3 className="font-montserrat font-bold text-lg text-foreground mb-2">
-                      Telefone
-                    </h3>
-                    <p className="text-muted-foreground">
-                      <a href="tel:+5511939065111" className="hover:text-primary transition-colors">
-                        (11) 9 3906-5111
-                      </a>
-                      <br />
-                      <a href="tel:+5511987131015" className="hover:text-primary transition-colors">
-                        (11) 9 8713-1015
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
+              <h2 className="font-montserrat font-bold text-3xl md:text-4xl mb-8">Estamos prontos para te atender</h2>
+              <div className="space-y-6">
                 <div className="flex gap-4">
-                  <MessageCircle className="text-primary flex-shrink-0" size={24} />
+                  <div className="bg-primary/10 p-3 rounded-xl flex-shrink-0">
+                    <MapPin className="text-primary" size={24} />
+                  </div>
                   <div>
-                    <h3 className="font-montserrat font-bold text-lg text-foreground mb-2">
-                      WhatsApp
-                    </h3>
-                    <a
-                      href={whatsappLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary hover:underline transition-colors"
-                    >
-                      Clique para conversar
-                    </a>
+                    <h4 className="font-bold text-lg">Endereço</h4>
+                    <p className="text-muted-foreground">Rua Conselheiro Moreira de Barros, 3809 – Lauzane Paulista – São Paulo/SP</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="bg-primary/10 p-3 rounded-xl flex-shrink-0">
+                    <Phone className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Contato</h4>
+                    <p className="text-muted-foreground">(11) 9 3906-5111 | (11) 9 8713-1015</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="bg-primary/10 p-3 rounded-xl flex-shrink-0">
+                    <Instagram className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-lg">Siga-nos</h4>
+                    <p className="text-muted-foreground">@r3bikeshop</p>
                   </div>
                 </div>
               </div>
             </div>
-
-            <img
-              src="/images/customer-satisfaction.jpg"
-              alt="Satisfacao do cliente na R3 Bike Shop"
-              className="w-full h-auto rounded-lg shadow-lg object-cover"
-            />
+            <div className="h-[400px] rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3659.578641178335!2d-46.6366666!3d-23.4755555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef6e6e6e6e6e6%3A0x6e6e6e6e6e6e6e6e!2sR.%20Conselheiro%20Moreira%20de%20Barros%2C%203809%20-%20Santana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002430-001!5e0!3m2!1spt-BR!2sbr!4v1621234567890!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-secondary-foreground mb-6">
-            Precisa de Orcamento Rapido?
-          </h2>
-          <p className="text-lg text-secondary-foreground/80 mb-8 max-w-2xl mx-auto">
-            Clique no botao abaixo e fale direto com a equipe pelo WhatsApp. Resposta rapida e sem compromisso.
-          </p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-montserrat font-bold text-lg hover:shadow-lg transition-shadow"
-          >
-            <MessageCircle size={20} />
-            Falar no WhatsApp Agora
-          </a>
+      {/* FAQ */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-bold text-3xl md:text-4xl mb-4">Perguntas Frequentes</h2>
+            <p className="text-muted-foreground text-lg">Tire suas dúvidas rápidas aqui.</p>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="text-left font-bold text-lg">Onde vocês atendem?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base">
+                Nossa loja está localizada na Rua Conselheiro Moreira de Barros, 3809 – Lauzane Paulista – São Paulo/SP.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="text-left font-bold text-lg">As bicicletas têm garantia?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base">
+                Sim! Todas as nossas bicicletas novas possuem garantia de fábrica e as revisões feitas em nossa oficina contam com garantia de serviço.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="text-left font-bold text-lg">É possível parcelar o pagamento?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base">
+                Sim, parcelamos em até 12x no cartão de crédito. Também aceitamos PIX com desconto especial.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-4">
+              <AccordionTrigger className="text-left font-bold text-lg">Vocês oferecem orçamento gratuito?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base">
+                Sim! Você pode trazer sua bike até a loja ou solicitar uma prévia de orçamento pelo nosso WhatsApp sem compromisso.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-5">
+              <AccordionTrigger className="text-left font-bold text-lg">Vocês fazem busca e leva da bicicleta?</AccordionTrigger>
+              <AccordionContent className="text-muted-foreground text-base">
+                Sim, temos serviço de leva e traz para toda a região da Zona Norte de São Paulo. Consulte taxas e disponibilidade pelo WhatsApp.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
-      {/* Footer Simples */}
-      <footer className="py-10 bg-white border-t border-border">
+      {/* Footer */}
+      <footer className="py-16 bg-white border-t border-border">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex flex-col items-center gap-4 mb-6">
-            <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-16 w-auto" />
-            <h3 className="font-montserrat font-bold text-xl">R3 Bike Shop & Oficina</h3>
+          <div className="flex flex-col items-center gap-6 mb-10">
+            <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-20 w-auto" />
+            <h3 className="font-montserrat font-bold text-2xl">Pedale, viva, sinta a liberdade.</h3>
+            <div className="flex gap-6">
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="bg-muted p-3 rounded-full hover:bg-primary hover:text-white transition-all">
+                <Instagram size={24} />
+              </a>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-muted p-3 rounded-full hover:bg-[#25D366] hover:text-white transition-all">
+                <MessageCircle size={24} />
+              </a>
+            </div>
           </div>
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} R3 Bike Shop - Lauzane Paulista, Zona Norte, São Paulo/SP. Todos os direitos reservados.
