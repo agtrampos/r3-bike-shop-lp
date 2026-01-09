@@ -410,8 +410,15 @@ export default function Home() {
                   alt={brand.name} 
                   className="h-10 md:h-12 w-auto object-contain"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                    (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="font-black text-2xl text-gray-400 uppercase italic tracking-tighter">${brand.name}</span>`;
+                    const target = e.currentTarget;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      const span = document.createElement('span');
+                      span.className = "font-black text-2xl text-gray-400 uppercase italic tracking-tighter";
+                      span.textContent = brand.name;
+                      parent.appendChild(span);
+                    }
                   }}
                 />
               </div>
