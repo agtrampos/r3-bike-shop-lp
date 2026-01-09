@@ -1,0 +1,1 @@
+<?php echo "Conexão com Hostinger OK - Arquivos atualizados em: " . date("H:i:s"); ?>
