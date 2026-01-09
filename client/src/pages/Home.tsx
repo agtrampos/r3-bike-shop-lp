@@ -41,12 +41,12 @@ export default function Home() {
   ];
 
   const partnerBrands = [
-    { name: "Shimano", logo: "https://vignette.wikia.nocookie.net/logopedia/images/4/4c/Shimano_logo.svg" },
-    { name: "SRAM", logo: "https://vignette.wikia.nocookie.net/logopedia/images/e/e0/SRAM_Logo.svg" },
-    { name: "RockShox", logo: "https://vignette.wikia.nocookie.net/logopedia/images/c/c2/RockShox_logo.svg" },
-    { name: "Caloi", logo: "https://vignette.wikia.nocookie.net/logopedia/images/3/36/Caloi_logo.svg" },
-    { name: "TSW", logo: "https://tswbike.com/wp-content/themes/tsw-bike/assets/img/logo-tsw-bike.png" },
-    { name: "First", logo: "https://firstbikes.com.br/wp-content/uploads/2021/05/logo-first-bikes.png" }
+    { name: "Shimano", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/shimano-logo.png" },
+    { name: "SRAM", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/sram-logo.png" },
+    { name: "RockShox", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/rockshox-logo.png" },
+    { name: "Caloi", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/caloi-logo.png" },
+    { name: "TSW", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/tsw-logo.png" },
+    { name: "First", logo: "https://official-lp.com.br/wp-content/uploads/2025/10/first-logo.png" }
   ];
 
   const googleReviews = [
