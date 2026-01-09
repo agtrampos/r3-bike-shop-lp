@@ -16,7 +16,7 @@ export default function Home() {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
-  const facadeUrl = "https://lh3.googleusercontent.com/d/19Y3lcICXbk1tdwqO86lsSisR2Yk2LEpT"; // Foto de Destaque Google Drive
+  const facadeUrl = "/facade.jpg"; // Foto de Destaque Local
 
   const deliveryImages = [
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
