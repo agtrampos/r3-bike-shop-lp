@@ -297,12 +297,13 @@ export default function Home() {
             </div>
             <div className="h-[400px] rounded-2xl overflow-hidden shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m12!1m3!1d3659.578641178335!2d-46.6366666!3d-23.4755555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef6e6e6e6e6e6%3A0x6e6e6e6e6e6e6e6e!2sR.%20Conselheiro%20Moreira%20de%20Barros%2C%203809%20-%20Santana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002430-001!5e0!3m2!1spt-BR!2sbr!4v1621234567890!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.7128!2d-46.6385!3d-23.4735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7367b938f4f%3A0x8e5f8f5d0b9b5f5f!2sR3%20Bike%20Shop!5e0!3m2!1spt-BR!2sbr!4v1704834567890!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen={true} 
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>
