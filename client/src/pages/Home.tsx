@@ -41,11 +41,11 @@ export default function Home() {
   ];
 
   const partnerBrands = [
-    { name: "Shimano", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Shimano_logo.svg/1280px-Shimano_logo.svg.png" },
-    { name: "SRAM", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/SRAM_logo.svg/1280px-SRAM_logo.svg.png" },
-    { name: "RockShox", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/RockShox_logo.svg/1280px-RockShox_logo.svg.png" },
-    { name: "Caloi", logo: "https://upload.wikimedia.org/wikipedia/pt/thumb/9/91/Logo_Caloi.svg/1200px-Logo_Caloi.svg.png" },
-    { name: "TSW", logo: "https://tswbike.com/wp-content/uploads/2019/12/logo-tsw-bike-preto.png" },
+    { name: "Shimano", logo: "https://vignette.wikia.nocookie.net/logopedia/images/4/4c/Shimano_logo.svg" },
+    { name: "SRAM", logo: "https://vignette.wikia.nocookie.net/logopedia/images/e/e0/SRAM_Logo.svg" },
+    { name: "RockShox", logo: "https://vignette.wikia.nocookie.net/logopedia/images/c/c2/RockShox_logo.svg" },
+    { name: "Caloi", logo: "https://vignette.wikia.nocookie.net/logopedia/images/3/36/Caloi_logo.svg" },
+    { name: "TSW", logo: "https://tswbike.com/wp-content/themes/tsw-bike/assets/img/logo-tsw-bike.png" },
     { name: "First", logo: "https://firstbikes.com.br/wp-content/uploads/2021/05/logo-first-bikes.png" }
   ];
 
@@ -404,7 +404,17 @@ export default function Home() {
           <h2 className="font-montserrat font-black text-3xl md:text-4xl text-black mb-12 uppercase italic">Trabalhamos com as <span className="text-[#F97316]">Melhores Marcas</span></h2>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
             {partnerBrands.map((brand, index) => (
-              <img key={index} src={brand.logo} alt={brand.name} className="h-10 md:h-12 w-auto object-contain" />
+              <div key={index} className="flex flex-col items-center">
+                <img 
+                  src={brand.logo} 
+                  alt={brand.name} 
+                  className="h-10 md:h-12 w-auto object-contain"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    (e.target as HTMLImageElement).parentElement!.innerHTML = `<span class="font-black text-2xl text-gray-400 uppercase italic tracking-tighter">${brand.name}</span>`;
+                  }}
+                />
+              </div>
             ))}
           </div>
         </div>
