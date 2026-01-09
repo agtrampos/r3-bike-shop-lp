@@ -215,7 +215,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Venda */}
             <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <img 
@@ -255,6 +255,20 @@ export default function Home() {
                 <Package className="text-[#F97316] mb-4" size={32} />
                 <h3 className="text-white font-montserrat font-black text-2xl uppercase italic tracking-wider">Conserto e Peças</h3>
                 <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Troca de componentes e reparos rápidos.</p>
+              </div>
+            </div>
+
+            {/* Peças Originais */}
+            <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <img 
+                src="/uploads/R3(1).jpg" 
+                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
+                alt="Peças Originais"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
+                <ShoppingCart className="text-[#F97316] mb-4" size={32} />
+                <h3 className="text-white font-montserrat font-black text-xl uppercase italic tracking-wider leading-tight">Peças de Qualidade Originais</h3>
+                <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">As melhores marcas para sua bike render o máximo.</p>
               </div>
             </div>
           </div>
