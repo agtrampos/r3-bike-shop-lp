@@ -1,6 +1,11 @@
 RewriteEngine On
 RewriteBase /
 
+# Redirecionar para HTTPS e WWW
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.r3bikeshop.com/$1 [L,R=301]
+
 # Se o arquivo não existir fisicamente na raiz
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
