@@ -295,7 +295,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-black text-xl uppercase italic">Endereço</h4>
-                    <p className="text-gray-600 text-lg mt-1 leading-tight">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista – São Paulo/SP</p>
+                    <p className="text-gray-600 text-lg mt-1 leading-tight">Rua Conselheiro Moreira de Barros, 3809<br />Complemento casa 03 – Lauzane Paulista – São Paulo/SP<br />CEP: 02430-002</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
@@ -304,16 +304,16 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="font-black text-xl uppercase italic">Contatos</h4>
-                    <p className="text-gray-600 text-lg mt-1 leading-tight">(11) 9 3906-5111<br />(11) 9 8713-1015</p>
+                    <p className="text-gray-600 text-lg mt-1 leading-tight">(11) 9 3906-5111<br />ramersonninga@yahoo.com.br</p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
                   <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
-                    <Instagram size={28} />
+                    <Star size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic">Redes Sociais</h4>
-                    <p className="text-gray-600 text-lg mt-1">Siga-nos: <strong>@r3bikeshop</strong></p>
+                    <h4 className="font-black text-xl uppercase italic">Dados Fiscais</h4>
+                    <p className="text-gray-600 text-lg mt-1">CNPJ: <strong>54.875.734/0001-43</strong></p>
                   </div>
                 </div>
               </div>
@@ -415,13 +415,16 @@ export default function Home() {
                   <Phone size={18} className="text-[#F97316]" />
                   (11) 93906-5111
                 </li>
-                <li className="flex items-center gap-3 text-gray-400">
-                  <MapPin size={18} className="text-[#F97316]" />
-                  Lauzane Paulista, SP
+                <li className="flex items-start gap-3 text-gray-400">
+                  <MapPin size={18} className="text-[#F97316] mt-1 shrink-0" />
+                  <span>Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP</span>
                 </li>
                 <li className="flex items-center gap-3 text-gray-400">
-                  <Star size={18} className="text-[#F97316]" />
-                  Segunda a Sábado
+                  <MessageCircle size={18} className="text-[#F97316]" />
+                  ramersonninga@yahoo.com.br
+                </li>
+                <li className="flex items-center gap-3 text-xs text-gray-500 font-bold uppercase tracking-tighter">
+                  CNPJ: 54.875.734/0001-43
                 </li>
               </ul>
             </div>
