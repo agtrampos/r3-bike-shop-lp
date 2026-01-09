@@ -8,15 +8,15 @@ export default function Home() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
+  const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
+
   return (
     <div className="min-h-screen bg-white text-foreground">
       <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">R3</span>
-            </div>
-            <span className="font-montserrat font-bold text-lg text-foreground hidden sm:inline">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
+            <span className="font-montserrat font-bold text-xl text-foreground hidden sm:inline">
               R3 Bike Shop & Oficina
             </span>
           </div>
@@ -421,8 +421,12 @@ export default function Home() {
       </section>
 
       {/* Footer Simples */}
-      <footer className="py-8 bg-white border-t border-border">
+      <footer className="py-10 bg-white border-t border-border">
         <div className="container mx-auto px-4 text-center">
+          <div className="flex flex-col items-center gap-4 mb-6">
+            <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-16 w-auto" />
+            <h3 className="font-montserrat font-bold text-xl">R3 Bike Shop & Oficina</h3>
+          </div>
           <p className="text-muted-foreground text-sm">
             © {new Date().getFullYear()} R3 Bike Shop - Lauzane Paulista, Zona Norte, São Paulo/SP. Todos os direitos reservados.
           </p>
