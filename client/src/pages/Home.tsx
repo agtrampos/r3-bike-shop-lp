@@ -558,9 +558,14 @@ export default function Home() {
                 href="https://agenciatrampos.vercel.app" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-white hover:text-[#F97316] transition-colors"
+                className="flex items-center gap-2 text-white hover:text-[#F97316] transition-colors group"
               >
-                Agência Trampos
+                <img 
+                  src="https://agenciatrampos.vercel.app/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
+                  alt="Agência Trampos Logo" 
+                  className="w-5 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                />
+                <span>Agência Trampos</span>
               </a>
             </div>
           </div>
