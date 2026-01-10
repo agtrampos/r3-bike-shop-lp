@@ -29,6 +29,7 @@ export default function Home() {
   );
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const instagramLink = "https://www.instagram.com/r3bikeshop";
+  const facebookLink = "https://www.facebook.com/R3BikeShop";
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
   const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
 
@@ -132,11 +133,11 @@ export default function Home() {
             {/* Mobile Menu Toggle */}
             <Sheet>
               <SheetTrigger asChild>
-                <button className="md:hidden p-2 text-gray-600 hover:text-[#F97316] transition-colors">
-                  <Menu size={28} />
+                <button className="md:hidden p-2 text-[#F97316] hover:bg-gray-50 rounded-lg transition-all active:scale-95">
+                  <Menu size={32} strokeWidth={2.5} />
                 </button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] border-l-4 border-l-[#F97316]">
                 <SheetHeader className="text-left border-b border-gray-100 pb-6">
                   <SheetTitle className="flex items-center gap-3">
                     <img src={logoUrl} alt="Logo" className="h-10 w-auto" />
@@ -162,7 +163,7 @@ export default function Home() {
                       <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
                         <Instagram size={22} />
                       </a>
-                      <a href="#" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                      <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
                         <Facebook size={22} />
                       </a>
                     </div>
@@ -587,7 +588,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-xl bg-white/5 p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
-                  <img src="/uploads/r3.jpg" alt="R3 Bike Shop" className="w-full h-full object-contain brightness-0 invert" />
+                  <img src="/uploads/r3.jpg" alt="R3 Bike Shop" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
@@ -604,7 +605,7 @@ export default function Home() {
                 <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
                   <Instagram className="text-white group-hover:scale-110" size={22} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
                   <Facebook className="text-white group-hover:scale-110" size={22} />
                 </a>
                 <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
@@ -645,11 +646,23 @@ export default function Home() {
                 </li>
                 <li className="flex items-center gap-4 text-gray-400 group">
                   <Mail size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
-                  <span className="text-lg">ramersonninga@yahoo.com.br</span>
+                  <a 
+                    href="mailto:ramersonninga@yahoo.com.br" 
+                    className="bg-white/5 hover:bg-[#F97316] text-white px-4 py-2 rounded-lg text-sm font-black uppercase italic transition-all border border-white/10 hover:border-transparent flex items-center gap-2"
+                  >
+                    Enviar E-mail
+                  </a>
                 </li>
                 <li className="flex items-center gap-4 text-gray-400 group">
                   <Phone size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
-                  <span className="text-lg font-bold">(11) 93906-5111</span>
+                  <a 
+                    href={whatsappLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-lg text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-lg"
+                  >
+                    Chama no Zap
+                  </a>
                 </li>
                 <li className="pt-4 border-t border-white/10">
                   <p className="text-xs text-gray-500 font-bold uppercase tracking-tighter">
