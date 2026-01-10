@@ -656,31 +656,53 @@ export default function Home() {
       </section>
 
       {/* Marcas Parceiras Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-montserrat font-black text-3xl md:text-4xl text-black mb-12 uppercase italic">Trabalhamos com as <span className="text-[#F97316]">Melhores Marcas</span></h2>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-            {partnerBrands.map((brand, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <img 
-                  src={brand.logo} 
-                  alt={brand.name} 
-                  className="h-10 md:h-12 w-auto object-contain"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = 'none';
-                    const parent = target.parentElement;
-                    if (parent) {
-                      const span = document.createElement('span');
-                      span.className = "font-black text-2xl text-gray-400 uppercase italic tracking-tighter";
-                      span.textContent = brand.name;
-                      parent.appendChild(span);
-                    }
-                  }}
-                />
-              </div>
-            ))}
-          </div>
+      <section className="py-20 bg-[#F97316] overflow-hidden relative">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="font-montserrat font-black text-3xl md:text-4xl text-white mb-16 uppercase italic drop-shadow-lg">
+            Trabalhamos com as <span className="text-black">Melhores Marcas</span>
+          </h2>
+          
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 2000,
+              }),
+            ]}
+            className="w-full max-w-6xl mx-auto"
+          >
+            <CarouselContent className="-ml-4 flex items-center">
+              {partnerBrands.map((brand, index) => (
+                <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
+                  <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
+                    <img 
+                      src={brand.logo} 
+                      alt={brand.name} 
+                      className="max-h-12 w-auto object-contain transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        target.style.display = 'none';
+                        const parent = target.parentElement;
+                        if (parent) {
+                          const span = document.createElement('span');
+                          span.className = "font-black text-xl text-black uppercase italic tracking-tighter";
+                          span.textContent = brand.name;
+                          parent.appendChild(span);
+                        }
+                      }}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </div>
       </section>
 
