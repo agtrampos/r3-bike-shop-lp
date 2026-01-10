@@ -681,18 +681,18 @@ export default function Home() {
             <CarouselContent className="-ml-4 flex items-center">
               {partnerBrands.map((brand, index) => (
                 <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5">
-                  <div className="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
+                  <div className="bg-transparent transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
                     <img 
                       src={brand.logo} 
                       alt={brand.name} 
-                      className="max-h-12 w-auto object-contain transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                      className="max-h-12 w-auto object-contain transition-all duration-500 opacity-60 grayscale brightness-0 invert group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:invert-0 group-hover:scale-110"
                       onError={(e) => {
                         const target = e.currentTarget;
                         target.style.display = 'none';
                         const parent = target.parentElement;
                         if (parent) {
                           const span = document.createElement('span');
-                          span.className = "font-black text-xl text-black uppercase italic tracking-tighter";
+                          span.className = "font-black text-xl text-white/60 group-hover:text-white uppercase italic tracking-tighter transition-all";
                           span.textContent = brand.name;
                           parent.appendChild(span);
                         }
