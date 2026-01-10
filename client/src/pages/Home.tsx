@@ -446,12 +446,15 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
-                  <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
-                    <Star size={28} />
+                  <div className="bg-[#F97316] text-white p-4 rounded-2xl shadow-lg animate-pulse">
+                    <Star size={28} fill="currentColor" />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Dados Fiscais</h4>
-                    <p className="text-gray-600 text-lg mt-1">CNPJ: <strong>54.875.734/0001-43</strong></p>
+                    <h4 className="font-black text-xl uppercase italic text-black">Paixão pelo Pedal</h4>
+                    <p className="text-[#F97316] text-2xl font-black mt-1 leading-tight uppercase italic tracking-tighter">
+                      Sua bike em boas mãos, <br />
+                      você seguro na pista!
+                    </p>
                   </div>
                 </div>
               </div>
