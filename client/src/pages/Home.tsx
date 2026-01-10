@@ -588,7 +588,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-xl bg-white/5 p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
-                  <img src="/uploads/r3.jpg" alt="R3 Bike Shop" className="w-full h-full object-contain" />
+                  <img src="https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png" alt="R3 Bike Shop" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
