@@ -1,4 +1,4 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2 } from "lucide-react";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2, Quote } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
@@ -21,6 +21,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Dialog,
   DialogContent,
@@ -80,9 +81,36 @@ export default function Home() {
   ];
 
   const googleReviews = [
-    { text: "Loja top, atendimento excelente e produtos de alta qualidade. Super recomendo.", author: "Google User" },
-    { text: "Lugar aconchegante e acolhedor, profissionais de ponta com muita experiência.", author: "Google User" },
-    { text: "Qualidade, variedade e preço acessível para todos os gostos.", author: "Google User" }
+    { 
+      text: "Extremamente profissionais, me atenderam em pleno dia de Natal (25/12) e montaram 2 bicicletas para meus filhos em menos de duas horas e fizeram nossa alegria. Preço justo e atendimento sensacional. Parabéns!", 
+      author: "Lucca Firmino",
+      metadata: "Local Guide · 180 avaliações · 2 semanas atrás"
+    },
+    { 
+      text: "Gostaria de expressar minha satisfação com o serviço prestado pela R3 bike shop. A revisão da minha bicicleta foi realizada com excelência, demonstrando um alto nível de profissionalismo e conhecimento técnico. Compramos 4 bicicletas lindas sendo 3 para meus filhos e amamos. O atendimento foi excelente, loja muito bem organizada e um ótimo café.", 
+      author: "Clovis Souza de Brito",
+      metadata: "4 avaliações · 2 meses atrás"
+    },
+    { 
+      text: "Equipe incrível, bikes de boas qualidades, atendimento maravilhoso, fui bem atendido e fiquei super feliz com a minha compra, recomendo... Comprei duas bicicletas, ótima qualidade, atendimento excelente, preços ótimos e variedade de produtos. Recomendo muito", 
+      author: "Sergio Carvalho",
+      metadata: "4 avaliações · 2 meses atrás"
+    },
+    { 
+      text: "Loja top, atendimento excelente e produtos de alta qualidade. Super recomendo.", 
+      author: "Google User",
+      metadata: "Local Guide"
+    },
+    { 
+      text: "Lugar aconchegante e acolhedor, profissionais de ponta com muita experiência.", 
+      author: "Google User",
+      metadata: "Local Guide"
+    },
+    { 
+      text: "Qualidade, variedade e preço acessível para todos os gostos.", 
+      author: "Google User",
+      metadata: "Local Guide"
+    }
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -634,21 +662,45 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {googleReviews.map((review, index) => (
-              <div key={index} className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[#F97316]/50 transition-colors">
-                <p className="text-xl italic mb-6 text-gray-300 leading-relaxed">"{review.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-[#F97316] rounded-full flex items-center justify-center font-black">G</div>
-                  <div>
-                    <p className="font-black uppercase italic text-sm">{review.author}</p>
-                    <div className="flex text-[#F97316] gap-0.5">
-                      {[...Array(5)].map((_, i) => <Star key={i} size={12} fill="currentColor" />)}
+          <div className="relative px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 4000,
+                }),
+              ]}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {googleReviews.map((review, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <div className="bg-white/5 p-8 rounded-3xl border border-white/10 hover:border-[#F97316]/50 transition-all duration-300 h-full flex flex-col justify-between">
+                      <div>
+                        <div className="flex text-[#F97316] gap-0.5 mb-6">
+                          {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
+                        </div>
+                        <p className="text-lg italic mb-8 text-gray-300 leading-relaxed line-clamp-6">"{review.text}"</p>
+                      </div>
+                      <div className="flex items-center gap-3 mt-auto">
+                        <div className="w-10 h-10 bg-[#F97316] rounded-full flex items-center justify-center font-black text-white shrink-0">
+                          {review.author.charAt(0)}
+                        </div>
+                        <div className="overflow-hidden">
+                          <p className="font-black uppercase italic text-sm truncate">{review.author}</p>
+                          <p className="text-gray-500 text-xs truncate">{review.metadata}</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12 bg-[#F97316] hover:bg-white hover:text-[#F97316] text-white border-none size-12 transition-all" />
+              <CarouselNext className="hidden md:flex -right-12 bg-[#F97316] hover:bg-white hover:text-[#F97316] text-white border-none size-12 transition-all" />
+            </Carousel>
           </div>
           
           <div className="mt-16 text-center">
