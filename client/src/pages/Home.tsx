@@ -87,11 +87,11 @@ export default function Home() {
 
   const services = [
     { title: "VENDA DE BICICLETAS", image: "/uploads/R3(1).webp" },
-    { title: "REVISÃO COMPLETA", image: "/uploads/r3(13).jpg" },
-    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(7).jpg" },
-    { title: "PEÇAS E COMPONENTES", image: "/uploads/R3(2).webp" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/R3(7).jpg" },
+    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(12).jpg" },
+    { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.PNG" },
     { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
-    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(14).jpg" },
+    { title: "SERVIÇO DE BUSCA E LEVA", image: "https://srv1194-files.hstgr.io/53de9ce0ac9ea2b0/api/preview/big/public_html/dist/public/uploads/r3bikeshop%20bike?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjpmYWxzZSwiZXhlY3V0ZSI6ZmFsc2UsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOmZhbHNlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjp0cnVlLCJoaWRlRG90ZmlsZXMiOmZhbHNlLCJkYXRlRm9ybWF0IjpmYWxzZX0sImlzcyI6IkZpbGUgQnJvd3NlciIsImV4cCI6MTc2ODA3OTg4MCwiaWF0IjoxNzY4MDcyNjgwfQ.5NJ4rfyRh6bCWb-ODpCTz18_s-QKfqEalya2Y_QkGto&inline=true&key=1768011279820" },
   ];
 
   const googleReviews = [
