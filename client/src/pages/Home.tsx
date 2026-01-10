@@ -414,7 +414,7 @@ export default function Home() {
                     <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Escolha seu app favorito e venha nos visitar:</p>
                     <div className="flex flex-wrap gap-3">
                       <a 
-                        href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
+                        href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
@@ -423,7 +423,7 @@ export default function Home() {
                         Google Maps
                       </a>
                       <a 
-                        href="https://waze.com/ul?ll=-23.4763193,-46.6506291&navigate=yes" 
+                        href="https://waze.com/ul?q=R3BikeShop+Lauzane+Paulista&navigate=yes" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
