@@ -1,4 +1,4 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu } from "lucide-react";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu, Maximize2 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
@@ -14,6 +14,20 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 export default function Home() {
   const menuItems = [
@@ -548,18 +562,63 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Nossa Loja por Dentro Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
-          <p className="text-gray-600 text-xl italic mb-12">Um espaço completo para cuidar da sua paixão.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div className="md:col-span-2 md:row-span-2">
-              <img src={facadeUrl} alt="Fachada R3 Bike Shop" className="w-full h-full object-cover rounded-2xl shadow-xl border-4 border-white" />
-            </div>
-            {storeImages.map((img, index) => (
-              <img key={index} src={img} alt={`Interior R3 Bike Shop ${index + 1}`} className="w-full h-64 object-cover rounded-2xl shadow-lg border-2 border-white hover:scale-105 transition-transform" />
-            ))}
+      {/* Nossa Loja por Dentro Section - Carrossel com Zoom */}
+      <section className="py-24 bg-white overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossa Loja <span className="text-[#F97316]">por Dentro</span></h2>
+            <p className="text-gray-600 text-xl italic">Um espaço completo para cuidar da sua paixão.</p>
+          </div>
+
+          <div className="max-w-6xl mx-auto relative px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {[facadeUrl, ...storeImages].map((img, index) => (
+                  <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <div className="relative group cursor-zoom-in overflow-hidden rounded-2xl aspect-square border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500">
+                          <img 
+                            src={img} 
+                            alt={`R3 Bike Shop - Galeria ${index + 1}`} 
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          />
+                          <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <div className="bg-white/90 p-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                              <Maximize2 className="text-[#F97316]" size={24} />
+                            </div>
+                          </div>
+                        </div>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 border-none bg-transparent shadow-none flex items-center justify-center">
+                        <VisuallyHidden.Root>
+                          <DialogTitle>Imagem da Loja {index + 1}</DialogTitle>
+                        </VisuallyHidden.Root>
+                        <img 
+                          src={img} 
+                          alt={`R3 Bike Shop - Ampliada ${index + 1}`} 
+                          className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex -left-12 bg-[#F97316] hover:bg-black text-white border-none size-12" />
+              <CarouselNext className="hidden md:flex -right-12 bg-[#F97316] hover:bg-black text-white border-none size-12" />
+            </Carousel>
+          </div>
+          
+          <div className="mt-12 text-center md:hidden">
+            <p className="text-gray-400 text-sm font-bold uppercase tracking-widest animate-pulse">
+              ← Deslize para ver mais →
+            </p>
           </div>
         </div>
       </section>
