@@ -48,6 +48,15 @@ export default function Home() {
   const logoUrl = "https://official-lp.com.br/wp-content/uploads/2025/10/ChatGPT-Image-30_10_2025-23_05_22-e1761917833516.png";
   const facadeUrl = "/uploads/destaquer3bike.PNG"; // Foto de Destaque Oficial
 
+  // Google Ads Conversion Event
+  const handleConversion = () => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'conversion', {
+        'send_to': 'AW-17865927460/sOHcCNOs0OAbEKTWkcdC'
+      });
+    }
+  };
+
   const deliveryImages = [
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-2-e1761915662651.jpeg",
     "https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.52.40-1-e1761915681146.jpeg",
@@ -180,6 +189,7 @@ export default function Home() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleConversion}
               className="inline-flex items-center gap-2 bg-[#F97316] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold hover:bg-[#EA580C] transition-colors shadow-md hover:shadow-lg text-sm sm:text-base"
             >
               <MessageCircle size={18} />
@@ -250,6 +260,7 @@ export default function Home() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={handleConversion}
                   className="inline-flex items-center justify-center gap-2 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-[#F97316] transition-all shadow-xl hover:-translate-y-1 uppercase italic"
                 >
                   <MessageCircle size={20} />
@@ -257,6 +268,7 @@ export default function Home() {
                 </a>
                 <a
                   href="tel:+5511939065111"
+                  onClick={handleConversion}
                   className="inline-flex items-center justify-center gap-2 border-2 border-black text-black px-8 py-4 rounded-xl font-black text-lg hover:bg-black hover:text-white transition-all uppercase italic"
                 >
                   <Phone size={20} />
@@ -917,6 +929,7 @@ export default function Home() {
                     href={whatsappLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
+                    onClick={handleConversion}
                     className="bg-[#25D366] hover:bg-[#128C7E] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all flex items-center gap-2 shadow-lg"
                   >
                     Chama no Zap
@@ -1008,6 +1021,7 @@ export default function Home() {
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={handleConversion}
         className="fixed bottom-8 right-8 z-50 bg-[#25D366] text-white p-5 rounded-full shadow-[0_10px_40px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group flex items-center gap-3"
       >
         <MessageCircle size={32} fill="currentColor" />
