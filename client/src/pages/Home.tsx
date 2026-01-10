@@ -80,6 +80,22 @@ export default function Home() {
     { name: "First", logo: "/logos/first.png" }
   ];
 
+  const offerImages = [
+    "/uploads/R3(4).webp",
+    "/uploads/R3(5).webp",
+    "/uploads/R3(6).webp",
+    "/uploads/r3.jpg"
+  ];
+
+  const services = [
+    { title: "VENDA DE BICICLETAS", image: "/uploads/r3.jpg" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/R3(1).jpg" },
+    { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(7).jpg" },
+    { title: "PEÇAS E COMPONENTES", image: "/uploads/R3(2).jpg" },
+    { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
+    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
+  ];
+
   const googleReviews = [
     { 
       text: "Extremamente profissionais, me atenderam em pleno dia de Natal (25/12) e montaram 2 bicicletas para meus filhos em menos de duas horas e fizeram nossa alegria. Preço justo e atendimento sensacional. Parabéns!", 
@@ -311,12 +327,37 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative group">
               <div className="absolute -inset-4 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all"></div>
-              <img 
-                src="/uploads/r3.jpg" 
-                alt="Bicicleta em Oferta" 
-                className="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl border-4 border-white transform group-hover:scale-[1.02] transition-transform duration-500"
-              />
-              <div className="absolute top-4 left-4 bg-black text-white px-6 py-2 rounded-full font-black uppercase italic tracking-widest shadow-xl">
+              
+              <Carousel
+                opts={{
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 4000,
+                  }),
+                ]}
+                className="relative w-full"
+              >
+                <CarouselContent>
+                  {offerImages.map((img, index) => (
+                    <CarouselItem key={index}>
+                      <img 
+                        src={img} 
+                        alt={`Oferta ${index + 1}`} 
+                        className="w-full h-[400px] object-cover rounded-2xl shadow-2xl border-4 border-white"
+                      />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <div className="absolute inset-0 pointer-events-none flex items-center justify-between px-4">
+                  <CarouselPrevious className="pointer-events-auto h-10 w-10 rounded-full bg-black/50 border-none text-white hover:bg-black" />
+                  <CarouselNext className="pointer-events-auto h-10 w-10 rounded-full bg-black/50 border-none text-white hover:bg-black" />
+                </div>
+              </Carousel>
+
+              <p className="text-white/50 text-xs mt-2 text-right italic">Foto ilustrativa</p>
+              <div className="absolute top-4 left-4 bg-black text-white px-6 py-2 rounded-full font-black uppercase italic tracking-widest shadow-xl z-20">
                 Promoção Ativa
               </div>
             </div>
@@ -350,34 +391,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              
-              <div className="flex flex-col gap-6">
-                <div className="flex items-start gap-4">
-                  <MapPin size={24} className="text-black mt-1 shrink-0" />
-                  <p className="font-bold text-lg leading-snug">
-                    Rua Conselheiro Moreira de Barros, 3809 <br />
-                    <span className="opacity-80">Zona Norte de São Paulo</span>
-                  </p>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href={whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white hover:text-[#F97316] transition-all shadow-2xl uppercase italic group"
-                  >
-                    <MessageCircle size={22} />
-                    (11) 93906-5111
-                  </a>
-                  <a
-                    href="tel:+5511987131015"
-                    className="inline-flex items-center justify-center gap-3 bg-white/20 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white hover:text-black transition-all border-2 border-white/30 uppercase italic"
-                  >
-                    <Phone size={22} />
-                    (11) 98713-1015
-                  </a>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -405,73 +418,65 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Serviços Reais com Imagens */}
-      <section className="py-24 bg-gray-50" id="servicos">
-        <div className="container mx-auto px-4">
+      {/* Nossos Serviços com Carrossel Automático */}
+      <section className="py-24 bg-black relative overflow-hidden" id="servicos">
+        {/* Background image with overlay style footer */}
+        <div 
+          className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
+          style={{
+            backgroundImage: `url('${facadeUrl}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossos <span className="text-[#F97316]">Serviços</span></h2>
-            <p className="text-gray-600 text-xl max-w-2xl mx-auto">
-              Trabalho profissional com peças originais e garantia de satisfação.
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Nossos <span className="text-[#F97316]">Serviços</span></h2>
+            <p className="text-gray-400 text-xl max-w-2xl mx-auto font-bold italic">
+              Excelência técnica e cuidado especial com sua bicicleta em cada detalhe.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Venda */}
-            <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <img 
-                src="https://official-lp.com.br/wp-content/uploads/2025/10/WhatsApp-Image-2025-10-31-at-09.55.40-1-e1761917054642.jpeg" 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
-                alt="Venda de Bicicletas"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
-                <Wrench className="text-[#F97316] mb-4" size={32} />
-                <h3 className="text-white font-montserrat font-black text-2xl uppercase italic tracking-wider">Venda de Bikes</h3>
-                <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Modelos novos e seminovos com garantia.</p>
-              </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {services.map((service, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="bg-transparent rounded-none shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+                    <div className="relative aspect-[4/5] overflow-hidden border-[4px] border-[#F97316]">
+                      <img 
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-6 pt-16">
+                        <h3 className="text-white font-montserrat font-black text-2xl text-center uppercase italic leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]">
+                          {service.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-4 mt-12">
+              <CarouselPrevious className="relative inset-0 translate-y-0 bg-white/10 text-white hover:bg-[#F97316] hover:text-white border-2 border-white/20" />
+              <CarouselNext className="relative inset-0 translate-y-0 bg-white/10 text-white hover:bg-[#F97316] hover:text-white border-2 border-white/20" />
             </div>
-
-            {/* Revisão */}
-            <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <img 
-                src="/uploads/r3.jpg" 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
-                alt="Revisão Completa"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
-                <Star className="text-[#F97316] mb-4" size={32} />
-                <h3 className="text-white font-montserrat font-black text-2xl uppercase italic tracking-wider">Revisão Completa</h3>
-                <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Sua bike nova de novo em todos os detalhes.</p>
-              </div>
-            </div>
-
-            {/* Manutenção */}
-            <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <img 
-                src="/uploads/R3(7).jpg" 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
-                alt="Conserto e Peças"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
-                <Package className="text-[#F97316] mb-4" size={32} />
-                <h3 className="text-white font-montserrat font-black text-2xl uppercase italic tracking-wider">Conserto e Peças</h3>
-                <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Troca de componentes e reparos rápidos.</p>
-              </div>
-            </div>
-
-            {/* Peças Originais */}
-            <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
-              <img 
-                src="/uploads/R3(1).jpg" 
-                className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
-                alt="Peças Originais"
-              />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
-                <ShoppingCart className="text-[#F97316] mb-4" size={32} />
-                <h3 className="text-white font-montserrat font-black text-xl uppercase italic tracking-wider leading-tight">Peças de Qualidade Originais</h3>
-                <p className="text-gray-300 mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">As melhores marcas para sua bike render o máximo.</p>
-              </div>
-            </div>
-          </div>
+          </Carousel>
         </div>
       </section>
 
@@ -616,11 +621,20 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-24 bg-black relative overflow-hidden">
+        {/* Geometric Bike Chain Pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{ 
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F97316' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}
+        ></div>
+        
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Dúvidas <span className="text-[#F97316]">Frequentes</span></h2>
-            <p className="text-gray-600 text-xl italic">Tudo o que você precisa saber sobre nossos serviços.</p>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Dúvidas <span className="text-[#F97316]">Frequentes</span></h2>
+            <p className="text-gray-400 text-xl italic">Tudo o que você precisa saber sobre nossos serviços.</p>
           </div>
 
           <Accordion type="single" collapsible className="w-full space-y-4">
@@ -630,11 +644,11 @@ export default function Home() {
               { q: "Quais as formas de pagamento?", a: "Aceitamos cartões de crédito (em até 12x), PIX e dinheiro. Oferecemos condições especiais para revisões completas." },
               { q: "Fazem busca e leva da bicicleta?", a: "Com certeza! Esse é um dos nossos diferenciais. Coletamos sua bike na sua casa ou trabalho na Zona Norte e devolvemos pronta." }
             ].map((item, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border border-gray-100 rounded-2xl px-6 bg-gray-50/50">
-                <AccordionTrigger className="text-left font-black text-xl py-6 hover:no-underline hover:text-[#F97316] transition-colors uppercase italic">
+              <AccordionItem key={i} value={`item-${i}`} className="border border-white/10 rounded-2xl px-6 bg-white/5 backdrop-blur-sm">
+                <AccordionTrigger className="text-left font-black text-xl py-6 hover:no-underline text-white hover:text-[#F97316] transition-colors uppercase italic">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600 text-lg pb-6 leading-relaxed">
+                <AccordionContent className="text-gray-400 text-lg pb-6 leading-relaxed">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -831,36 +845,6 @@ export default function Home() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            {/* Brand Column */}
-            <div className="col-span-1 md:col-span-1">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
-                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
-                </div>
-                <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
-                  <span className="text-white">R3</span>
-                  <div className="flex gap-1">
-                    <span className="text-[#F97316]">BIKE</span>
-                    <span className="text-[#F97316]">SHOP</span>
-                  </div>
-                </h3>
-              </div>
-              <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
-                Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
-              </p>
-              <div className="flex gap-3">
-                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Instagram className="text-white group-hover:scale-110" size={20} />
-                </a>
-                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Facebook className="text-white group-hover:scale-110" size={20} />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Youtube className="text-white group-hover:scale-110" size={20} />
-                </a>
-              </div>
-            </div>
-
             {/* Quick Links */}
             <div>
               <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Links Úteis</h4>
@@ -925,6 +909,36 @@ export default function Home() {
                   </p>
                 </li>
               </ul>
+            </div>
+
+            {/* Brand Column */}
+            <div className="col-span-1 md:col-span-1">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
+                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
+                </div>
+                <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
+                  <span className="text-white">R3</span>
+                  <div className="flex gap-1">
+                    <span className="text-[#F97316]">BIKE</span>
+                    <span className="text-[#F97316]">SHOP</span>
+                  </div>
+                </h3>
+              </div>
+              <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
+                Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
+              </p>
+              <div className="flex gap-3">
+                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Instagram className="text-white group-hover:scale-110" size={20} />
+                </a>
+                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Facebook className="text-white group-hover:scale-110" size={20} />
+                </a>
+                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Youtube className="text-white group-hover:scale-110" size={20} />
+                </a>
+              </div>
             </div>
           </div>
 
