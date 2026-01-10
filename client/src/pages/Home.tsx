@@ -359,7 +359,7 @@ export default function Home() {
               </div>
               <div className="mt-12">
                 <a 
-                  href="https://maps.app.goo.gl/uXmR3mB1XmB1XmB1" 
+                  href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[#F97316] font-black text-lg hover:underline uppercase italic"
@@ -489,7 +489,7 @@ export default function Home() {
           <div className="mt-16 text-center">
             <p className="text-gray-400 font-bold uppercase tracking-widest text-sm mb-4">Nota 5,0 no Google • 315 avaliações</p>
             <a 
-              href="https://www.google.com/maps/place/R3+Bike+Shop" 
+              href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-white text-black px-10 py-4 rounded-full font-black hover:bg-[#F97316] hover:text-white transition-all uppercase italic shadow-2xl"
@@ -605,7 +605,7 @@ export default function Home() {
 
         {/* Floating Google Review Button */}
         <a 
-          href="https://www.google.com/maps/place/R3+Bike+Shop" 
+          href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
           target="_blank" 
           rel="noopener noreferrer"
           className="fixed bottom-32 right-8 bg-white rounded-full px-5 py-3 flex items-center gap-3 shadow-[0_4px_20px_rgba(0,0,0,0.25)] hover:scale-105 hover:-translate-y-1 transition-all duration-300 z-[9999] border border-gray-100 group"
