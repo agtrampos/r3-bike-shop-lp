@@ -67,8 +67,7 @@ export default function Home() {
     "https://lh3.googleusercontent.com/geougc/AF1QipPjT8mG_maVACSOR6KbMYsnjaG2jNFsGMxDbvnK=h305-no",
     "https://lh3.googleusercontent.com/geougc/AF1QipNRS31fUnGUtciWPHSm3RADDoDW4nsLXV_-3C6I=h305-no",
     "https://lh3.googleusercontent.com/geougc/AF1QipMissoeOZAxaxnojqtqXQjoc7VgikxWhWHbK77p=h305-no",
-    "https://lh3.googleusercontent.com/geougc/AF1QipOFnWmT9SIs3UewYxkyWjFKah9oDbv_eEQIie2S=h305-no",
-    "https://lh3.googleusercontent.com/geougc/AF1QipO-9AW5jUmfG29K9Wnxn2fApukvjvou35yHKKvJ=h305-no"
+    "https://lh3.googleusercontent.com/geougc/AF1QipOFnWmT9SIs3UewYxkyWjFKah9oDbv_eEQIie2S=h305-no"
   ];
 
   const partnerBrands = [
