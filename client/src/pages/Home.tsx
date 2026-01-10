@@ -652,8 +652,20 @@ export default function Home() {
       </section>
 
       {/* Avaliações do Google Section */}
-      <section className="py-24 bg-black text-white" id="avaliacoes">
-        <div className="container mx-auto px-4 max-w-5xl">
+      <section className="py-24 bg-black text-white relative overflow-hidden" id="avaliacoes">
+        {/* Background image with overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
+          style={{
+            backgroundImage: `url('https://srv1194-files.hstgr.io/6eba0a074edf2514/api/preview/big/public_html/dist/public/uploads/r3bikeshop%20bike?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjpmYWxzZSwiZXhlY3V0ZSI6ZmFsc2UsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOmZhbHNlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjp0cnVlLCJoaWRlRG90ZmlsZXMiOmZhbHNlLCJkYXRlRm9ybWF0IjpmYWxzZX0sImlzcyI6IkZpbGUgQnJvd3NlciIsImV4cCI6MTc2ODAxODE3MywiaWF0IjoxNzY4MDEwOTczfQ.YYbclJsVZ3-WcNru9DerjpJz_Dowg9OmuPJw_2e2WZA&inline=true&key=1768011279820')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-0"></div>
+        
+        <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-16">
             <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliação dos <span className="text-[#F97316]">Clientes</span></h2>
             <div className="flex items-center justify-center gap-2 mb-8">
