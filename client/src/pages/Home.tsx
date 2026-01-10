@@ -724,7 +724,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 z-0 opacity-40 grayscale pointer-events-none"
           style={{
-            backgroundImage: `url('https://srv1194-files.hstgr.io/6eba0a074edf2514/api/preview/big/public_html/dist/public/uploads/r3bikeshop%20bike?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjpmYWxzZSwiZXhlY3V0ZSI6ZmFsc2UsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOmZhbHNlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjp0cnVlLCJoaWRlRG90ZmlsZXMiOmZhbHNlLCJkYXRlRm9ybWF0IjpmYWxzZX0sImlzcyI6IkZpbGUgQnJvd3NlciIsImV4cCI6MTc2ODAxODE3MywiaWF0IjoxNzY4MDEwOTczfQ.YYbclJsVZ3-WcNru9DerjpJz_Dowg9OmuPJw_2e2WZA&inline=true&key=1768011279820')`,
+            backgroundImage: `url('${facadeUrl}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -740,8 +740,8 @@ export default function Home() {
             {/* Brand Column */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-xl bg-transparent hover:bg-white p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
-                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-16 h-16 rounded-xl bg-white p-3 border border-white/10 flex items-center justify-center scale-110 shadow-xl">
+                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
