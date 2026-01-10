@@ -233,7 +233,7 @@ export default function Home() {
             {/* Revisão */}
             <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <img 
-                src="/uploads/R3(7).jpg" 
+                src="/uploads/r3.jpg" 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
                 alt="Revisão Completa"
               />
@@ -247,7 +247,7 @@ export default function Home() {
             {/* Manutenção */}
             <div className="group relative overflow-hidden rounded-2xl bg-black aspect-[4/5] shadow-2xl hover:-translate-y-2 transition-all duration-500">
               <img 
-                src="/uploads/r3.jpg" 
+                src="/uploads/R3(7).jpg" 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700" 
                 alt="Conserto e Peças"
               />
