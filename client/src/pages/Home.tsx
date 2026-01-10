@@ -657,7 +657,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 z-0 opacity-30 grayscale pointer-events-none"
           style={{
-            backgroundImage: `url('https://srv1194-files.hstgr.io/6eba0a074edf2514/api/preview/big/public_html/dist/public/uploads/r3bikeshop%20bike?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjpmYWxzZSwiZXhlY3V0ZSI6ZmFsc2UsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOmZhbHNlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjp0cnVlLCJoaWRlRG90ZmlsZXMiOmZhbHNlLCJkYXRlRm9ybWF0IjpmYWxzZX0sImlzcyI6IkZpbGUgQnJvd3NlciIsImV4cCI6MTc2ODAxODE3MywiaWF0IjoxNzY4MDEwOTczfQ.YYbclJsVZ3-WcNru9DerjpJz_Dowg9OmuPJw_2e2WZA&inline=true&key=1768011279820')`,
+            backgroundImage: `url('/uploads/r3.jpg')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
