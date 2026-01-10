@@ -149,7 +149,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-              <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
+              <img src={logoUrl} alt="R3 Bike Shop - Oficina de Bicicletas no Lauzane Paulista" className="h-12 w-auto" />
               <span className="font-montserrat font-black text-xl text-black hidden lg:inline uppercase tracking-tight italic">
                 R3 BIKE <span className="text-[#F97316]">SHOP</span>
               </span>
@@ -240,11 +240,10 @@ export default function Home() {
                 Oficina Especializada na Zona Norte
               </span>
               <h1 className="font-montserrat font-black text-4xl md:text-6xl text-black mb-6 leading-tight uppercase italic">
-                A Melhor Oficina <br />
-                <span className="text-[#F97316]">Para Sua Bike</span>
+                Oficina de Bicicletas no Lauzane Paulista – <span className="text-[#F97316]">R3 Bike Shop</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Tudo o que sua bike precisa em um só lugar: <strong>revisão, manutenção e acessórios</strong> com preço justo e atendimento profissional. Atendemos Lauzane Paulista e toda Zona Norte de São Paulo.
+                A R3 Bike Shop é sua <strong>oficina de bicicletas no Lauzane Paulista</strong>. Oferecemos <strong>manutenção de bicicletas em São Paulo</strong> com peças originais e atendimento especializado. Somos a melhor <strong>bike shop da Zona Norte SP</strong> para quem busca qualidade e preço justo.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -399,17 +398,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">
-              Quem <span className="text-[#F97316]">Somos</span>
+              R3 Bike Shop: <span className="text-[#F97316]">Quem Somos</span>
             </h2>
             <div className="space-y-6 text-xl text-gray-600 leading-relaxed">
               <p>
-                A <strong>R3 Bike Shop</strong> nasceu da paixão pelo ciclismo e do compromisso com a excelência técnica. Somos especializados em <strong>venda e manutenção de bicicletas</strong> de todos os tipos.
+                A <strong>R3 Bike Shop</strong> nasceu da paixão pelo ciclismo e do compromisso com a excelência técnica. Somos uma <strong>oficina de bicicletas no Lauzane Paulista</strong> especializada em <strong>venda e manutenção de bicicletas</strong> de todos os tipos.
               </p>
               <p>
-                Nossa oficina é equipada com ferramentas de precisão e nossa equipe é treinada para lidar com desde ajustes simples até revisões complexas de performance.
+                Nossa oficina é equipada com ferramentas de precisão e nossa equipe é treinada para lidar com desde ajustes simples até revisões complexas de performance. Somos uma <strong>bike shop na Zona Norte SP</strong> com foco total na satisfação do cliente.
               </p>
               <p className="font-bold text-black italic">
-                "Não apenas consertamos bikes, nós cuidamos da sua segurança e prazer em pedalar."
+                "Somos uma oficina de bicicletas com 5.0 estrelas no Google, baseada em mais de 300 avaliações reais."
               </p>
             </div>
           </div>
@@ -432,9 +431,9 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Nossos <span className="text-[#F97316]">Serviços</span></h2>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl text-white mb-4 uppercase italic">Serviços da <span className="text-[#F97316]">R3 Bike Shop</span></h2>
             <p className="text-gray-400 text-xl max-w-2xl mx-auto font-bold italic">
-              Excelência técnica e cuidado especial com sua bicicleta em cada detalhe.
+              Excelência técnica e cuidado especial: a melhor <strong>manutenção de bicicletas em São Paulo</strong>.
             </p>
           </div>
 
@@ -457,7 +456,7 @@ export default function Home() {
                     <div className="relative aspect-[4/5] overflow-hidden border-[4px] border-[#F97316]">
                       <img 
                         src={service.image} 
-                        alt={service.title}
+                        alt={`${service.title} - R3 Bike Shop Lauzane Paulista Zona Norte SP`}
                         className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                       />
                       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 to-transparent p-6 pt-16">
@@ -493,7 +492,7 @@ export default function Home() {
                   key={index}
                   className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
                 >
-                  <img src={img} alt={`Entrega R3 Bike Shop ${index + 1}`} className="w-full h-full object-cover" />
+                  <img src={img} alt={`Entrega de bicicleta R3 Bike Shop Lauzane Paulista - Foto ${index + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
@@ -530,15 +529,15 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">Onde <span className="text-[#F97316]">Estamos</span></h2>
+              <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-8 uppercase italic">Localização da <span className="text-[#F97316]">Oficina</span></h2>
               <div className="space-y-8">
                 <div className="flex gap-6 items-start">
                   <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
                     <MapPin size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Navegação por GPS</h4>
-                    <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Escolha seu app favorito e venha nos visitar:</p>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Oficina de bicicletas no Lauzane Paulista</h4>
+                    <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Visite a R3 Bike Shop, sua <strong>bike shop na Zona Norte SP</strong>:</p>
                     <div className="flex flex-wrap gap-3">
                       <a 
                         href="https://www.google.com/maps/dir/?api=1&destination=R3BikeShop+Lauzane+Paulista" 
@@ -684,7 +683,7 @@ export default function Home() {
                   <div className="bg-transparent transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center h-24 group mx-2">
                     <img 
                       src={brand.logo} 
-                      alt={brand.name} 
+                      alt={`Logo ${brand.name} - Marca parceira R3 Bike Shop`} 
                       className="max-h-12 w-auto object-contain transition-all duration-500 opacity-60 grayscale brightness-0 invert group-hover:opacity-100 group-hover:grayscale-0 group-hover:brightness-100 group-hover:invert-0 group-hover:scale-110"
                       onError={(e) => {
                         const target = e.currentTarget;
@@ -730,7 +729,7 @@ export default function Home() {
                         <div className="relative group cursor-zoom-in overflow-hidden rounded-2xl aspect-square border-4 border-white shadow-lg hover:shadow-2xl transition-all duration-500">
                           <img 
                             src={img} 
-                            alt={`R3 Bike Shop - Galeria ${index + 1}`} 
+                            alt={`Fachada e Interior da R3 Bike Shop no Lauzane Paulista Zona Norte SP - Foto ${index + 1}`} 
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                           />
                           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
@@ -746,7 +745,7 @@ export default function Home() {
                         </VisuallyHidden.Root>
                         <img 
                           src={img} 
-                          alt={`R3 Bike Shop - Ampliada ${index + 1}`} 
+                          alt={`Foto Detalhada R3 Bike Shop Lauzane Paulista - ${index + 1}`} 
                           className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
                         />
                       </DialogContent>
@@ -783,9 +782,9 @@ export default function Home() {
         
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="text-center mb-16">
-            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliação dos <span className="text-[#F97316]">Clientes</span></h2>
+            <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliações: <span className="text-[#F97316]">R3 Bike Shop</span></h2>
             <div className="flex items-center justify-center gap-2 mb-8">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" className="w-8 h-8" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Avaliações R3 Bike Shop Lauzane Paulista" className="w-8 h-8" />
               <div className="text-2xl font-black">5,0 ★ <span className="text-gray-400 font-normal text-lg">no Google</span></div>
             </div>
           </div>
@@ -935,7 +934,7 @@ export default function Home() {
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
-                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
+                  <img src={logoUrl} alt="Logo R3 Bike Shop - Oficina no Lauzane Paulista" className="w-full h-full object-contain" />
                 </div>
                 <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
@@ -946,7 +945,7 @@ export default function Home() {
                 </h3>
               </div>
               <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
-                Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
+                R3 Bike Shop – Oficina de Bicicletas no Lauzane Paulista, Zona Norte de São Paulo. Manutenção, revisão, peças e acessórios.
               </p>
               <div className="flex gap-3">
                 <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
