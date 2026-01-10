@@ -83,17 +83,16 @@ export default function Home() {
   const offerImages = [
     "/uploads/R3(4).webp",
     "/uploads/R3(5).webp",
-    "/uploads/R3(6).webp",
-    "/uploads/r3.jpg"
+    "/uploads/R3(6).webp"
   ];
 
   const services = [
-    { title: "VENDA DE BICICLETAS", image: "/uploads/r3.jpg" },
-    { title: "REVISÃO COMPLETA", image: "/uploads/R3(1).jpg" },
+    { title: "VENDA DE BICICLETAS", image: "/uploads/R3(1).webp" },
+    { title: "REVISÃO COMPLETA", image: "/uploads/r3(13).jpg" },
     { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(7).jpg" },
-    { title: "PEÇAS E COMPONENTES", image: "/uploads/R3(2).jpg" },
+    { title: "PEÇAS E COMPONENTES", image: "/uploads/R3(2).webp" },
     { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
-    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
+    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(14).jpg" },
   ];
 
   const googleReviews = [
