@@ -720,8 +720,20 @@ export default function Home() {
 
       {/* Footer Melhorado */}
       <footer className="bg-black text-white pt-24 pb-12 relative overflow-hidden">
+        {/* Background image with overlay */}
+        <div 
+          className="absolute inset-0 z-0 opacity-40 grayscale pointer-events-none"
+          style={{
+            backgroundImage: `url('https://srv1194-files.hstgr.io/6eba0a074edf2514/api/preview/big/public_html/dist/public/uploads/r3bikeshop%20bike?auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJsb2NhbGUiOiJlbl9HQiIsInZpZXdNb2RlIjoibW9zYWljIiwic2luZ2xlQ2xpY2siOmZhbHNlLCJwZXJtIjp7ImFkbWluIjpmYWxzZSwiZXhlY3V0ZSI6ZmFsc2UsImNyZWF0ZSI6dHJ1ZSwicmVuYW1lIjp0cnVlLCJtb2RpZnkiOnRydWUsImRlbGV0ZSI6dHJ1ZSwic2hhcmUiOmZhbHNlLCJkb3dubG9hZCI6dHJ1ZX0sImNvbW1hbmRzIjpbXSwibG9ja1Bhc3N3b3JkIjp0cnVlLCJoaWRlRG90ZmlsZXMiOmZhbHNlLCJkYXRlRm9ybWF0IjpmYWxzZX0sImlzcyI6IkZpbGUgQnJvd3NlciIsImV4cCI6MTc2ODAxODE3MywiaWF0IjoxNzY4MDEwOTczfQ.YYbclJsVZ3-WcNru9DerjpJz_Dowg9OmuPJw_2e2WZA&inline=true&key=1768011279820')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black z-0"></div>
+        
         {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F97316] to-transparent opacity-30"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F97316] to-transparent opacity-30 z-10"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
