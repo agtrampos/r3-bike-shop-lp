@@ -91,7 +91,7 @@ export default function Home() {
     { title: "CONSERTO E MANUTENÇÃO", image: "/uploads/R3(12).jpg" },
     { title: "PEÇAS E COMPONENTES", image: "/uploads/destaquer3bike.PNG" },
     { title: "ACESSÓRIOS PARA BIKE", image: "/uploads/r3(9).jpg" },
-    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(13).jpg" },
+    { title: "SERVIÇO DE BUSCA E LEVA", image: "/uploads/r3(15).jpg" },
   ];
 
   const googleReviews = [
