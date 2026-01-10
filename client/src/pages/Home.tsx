@@ -1,4 +1,4 @@
-import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail } from "lucide-react";
+import { MessageCircle, Wrench, Package, Users, Star, MapPin, Phone, ShoppingCart, ArrowRight, Instagram, ChevronRight, ChevronLeft, Facebook, Youtube, Mail, Menu } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import {
@@ -7,8 +7,22 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 export default function Home() {
+  const menuItems = [
+    { label: "Início", href: "#home" },
+    { label: "Serviços", href: "#servicos" },
+    { label: "Avaliações", href: "#avaliacoes" },
+    { label: "Localização", href: "#localizacao" },
+    { label: "Sobre", href: "#sobre" },
+  ];
   const whatsappNumber = "5511939065111";
   const whatsappMessage = encodeURIComponent(
     "Ola! Gostaria de mais informacoes sobre os servicos de manutencao e venda de bicicletas da R3 Bike Shop."
@@ -74,27 +88,88 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white text-black font-sans">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+      <header id="home" className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
-            <span className="font-montserrat font-black text-xl text-black hidden sm:inline uppercase tracking-tight italic">
-              R3 BIKE <span className="text-[#F97316]">SHOP</span>
-            </span>
-          </a>
-          <div className="flex items-center gap-4">
-            <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#F97316] transition-colors">
-              <Instagram size={24} />
+          <div className="flex items-center gap-8">
+            <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+              <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
+              <span className="font-montserrat font-black text-xl text-black hidden lg:inline uppercase tracking-tight italic">
+                R3 BIKE <span className="text-[#F97316]">SHOP</span>
+              </span>
             </a>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-6">
+              {menuItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-sm font-black uppercase italic tracking-wider text-gray-600 hover:text-[#F97316] transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
+          </div>
+
+          <div className="flex items-center gap-2 sm:gap-4">
+            <div className="hidden sm:flex items-center gap-4">
+              <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-[#F97316] transition-colors">
+                <Instagram size={24} />
+              </a>
+            </div>
+            
             <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#F97316] text-white px-5 py-2.5 rounded-full font-bold hover:bg-[#EA580C] transition-colors shadow-md hover:shadow-lg"
+              className="inline-flex items-center gap-2 bg-[#F97316] text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full font-bold hover:bg-[#EA580C] transition-colors shadow-md hover:shadow-lg text-sm sm:text-base"
             >
               <MessageCircle size={18} />
-              <span className="hidden sm:inline">WhatsApp</span>
+              <span className="hidden xs:inline">WhatsApp</span>
             </a>
+
+            {/* Mobile Menu Toggle */}
+            <Sheet>
+              <SheetTrigger asChild>
+                <button className="md:hidden p-2 text-gray-600 hover:text-[#F97316] transition-colors">
+                  <Menu size={28} />
+                </button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                <SheetHeader className="text-left border-b border-gray-100 pb-6">
+                  <SheetTitle className="flex items-center gap-3">
+                    <img src={logoUrl} alt="Logo" className="h-10 w-auto" />
+                    <span className="font-montserrat font-black text-lg italic uppercase">
+                      R3 BIKE <span className="text-[#F97316]">SHOP</span>
+                    </span>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="flex flex-col gap-6 py-8">
+                  {menuItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="text-2xl font-black uppercase italic tracking-tighter text-gray-800 hover:text-[#F97316] transition-colors flex items-center justify-between group"
+                    >
+                      {item.label}
+                      <ChevronRight size={24} className="text-gray-300 group-hover:text-[#F97316] transition-colors" />
+                    </a>
+                  ))}
+                  <div className="mt-8 pt-8 border-t border-gray-100">
+                    <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Siga-nos</p>
+                    <div className="flex gap-4">
+                      <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                        <Instagram size={22} />
+                      </a>
+                      <a href="#" className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-gray-600 hover:bg-[#F97316] hover:text-white transition-all">
+                        <Facebook size={22} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
@@ -206,7 +281,7 @@ export default function Home() {
       </section>
 
       {/* Serviços Reais com Imagens */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50" id="servicos">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-montserrat font-black text-4xl md:text-5xl text-black mb-4 uppercase italic">Nossos <span className="text-[#F97316]">Serviços</span></h2>
@@ -323,7 +398,7 @@ export default function Home() {
       </section>
 
       {/* Localização e Mapa Corrigido */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-gray-50" id="localizacao">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -459,7 +534,7 @@ export default function Home() {
       </section>
 
       {/* Avaliações do Google Section */}
-      <section className="py-24 bg-black text-white">
+      <section className="py-24 bg-black text-white" id="avaliacoes">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-16">
             <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-4 uppercase italic">Avaliação dos <span className="text-[#F97316]">Clientes</span></h2>
