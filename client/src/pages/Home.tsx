@@ -809,6 +809,14 @@ export default function Home() {
                   <MapPin size={22} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="text-lg">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP - CEP: 02430-002</span>
                 </li>
+                <li className="flex items-start gap-4 text-gray-400 group">
+                  <Clock size={22} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-lg">
+                    <span className="text-white font-bold">Atendimento:</span><br />
+                    Segunda a sexta: 9h às 18h<br />
+                    Sábado: 9h às 15h
+                  </span>
+                </li>
                 <li className="flex items-center gap-4 text-gray-400 group">
                   <Mail size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
                   <a 
