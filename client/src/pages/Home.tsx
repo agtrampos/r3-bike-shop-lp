@@ -886,7 +886,7 @@ export default function Home() {
                 <li className="flex items-center gap-3 text-gray-400 group">
                   <Mail size={20} className="text-[#F97316] group-hover:scale-110 transition-transform" />
                   <a 
-                    href="mailto:ramersonninga@yahoo.com.br" 
+                    href="mailto:suporte@r3bikeshop.com" 
                     className="bg-white/5 hover:bg-[#F97316] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all border border-white/10 hover:border-transparent flex items-center gap-2"
                   >
                     Enviar E-mail

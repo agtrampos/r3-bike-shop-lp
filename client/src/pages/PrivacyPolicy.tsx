@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
 
           <h2 className="text-2xl font-black text-black uppercase italic mt-12">4. Seus Direitos</h2>
           <p>
-            Você pode solicitar a qualquer momento a exclusão de seus dados do nosso cadastro entrando em contato conosco pelo e-mail: <strong>ramersonninga@yahoo.com.br</strong>.
+            Você pode solicitar a qualquer momento a exclusão de seus dados do nosso cadastro entrando em contato conosco pelo e-mail: <strong>suporte@r3bikeshop.com</strong>.
           </p>
 
           <h2 className="text-2xl font-black text-black uppercase italic mt-12">5. Atualizações</h2>
