@@ -419,7 +419,9 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
                       >
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282020%29.svg" className="w-5 h-5" alt="Google Maps" />
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" fill="#4285F4"/>
+                        </svg>
                         Google Maps
                       </a>
                       <a 
@@ -428,7 +430,10 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
                       >
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Waze_logo.svg" className="w-5 h-5" alt="Waze" />
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18.5 12.5c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5zm-13 0c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5z" fill="#33CCFF"/>
+                          <path d="M12 2C6.5 2 2 6.5 2 12c0 1.5.3 2.9.9 4.2L2 21l4.8-.9c1.3.6 2.7.9 4.2.9 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 17.5c-1.3 0-2.5-.3-3.6-.9l-.3-.1-2.7.5.5-2.6-.2-.3c-.7-1.1-1.1-2.3-1.1-3.6 0-4.1 3.4-7.5 7.5-7.5s7.5 3.4 7.5 7.5-3.4 7.5-7.5 7.5z" fill="#33CCFF"/>
+                        </svg>
                         Waze
                       </a>
                     </div>
