@@ -410,17 +410,39 @@ export default function Home() {
                     <MapPin size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic">Endereço</h4>
-                    <p className="text-gray-600 text-lg mt-1 leading-tight">Rua Conselheiro Moreira de Barros, 3809<br />Complemento casa 03 – Lauzane Paulista – São Paulo/SP<br />CEP: 02430-002</p>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Navegação por GPS</h4>
+                    <p className="text-gray-600 text-lg mt-2 leading-tight mb-4">Escolha seu app favorito e venha nos visitar:</p>
+                    <div className="flex flex-wrap gap-3">
+                      <a 
+                        href="https://maps.app.goo.gl/DBC8XZpn7RLLHAYd9" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-white border-2 border-gray-200 hover:border-[#F97316] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                      >
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282020%29.svg" className="w-5 h-5" alt="Google Maps" />
+                        Google Maps
+                      </a>
+                      <a 
+                        href="https://waze.com/ul?ll=-23.4763193,-46.6506291&navigate=yes" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-white border-2 border-gray-200 hover:border-[#33CCFF] text-black px-4 py-2 rounded-xl text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-sm"
+                      >
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Waze_logo.svg" className="w-5 h-5" alt="Waze" />
+                        Waze
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
                   <div className="bg-black text-white p-4 rounded-2xl shadow-lg">
-                    <Phone size={28} />
+                    <ShoppingCart size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic">Contatos</h4>
-                    <p className="text-gray-600 text-lg mt-1 leading-tight">(11) 9 3906-5111<br />ramersonninga@yahoo.com.br</p>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Fácil Acesso</h4>
+                    <p className="text-gray-600 text-lg mt-1 leading-tight">
+                      Localização estratégica no <strong>Lauzane Paulista</strong>, com facilidade para estacionar e acesso rápido para quem vem de toda a Zona Norte.
+                    </p>
                   </div>
                 </div>
                 <div className="flex gap-6 items-start">
@@ -428,7 +450,7 @@ export default function Home() {
                     <Star size={28} />
                   </div>
                   <div>
-                    <h4 className="font-black text-xl uppercase italic">Dados Fiscais</h4>
+                    <h4 className="font-black text-xl uppercase italic text-[#F97316]">Dados Fiscais</h4>
                     <p className="text-gray-600 text-lg mt-1">CNPJ: <strong>54.875.734/0001-43</strong></p>
                   </div>
                 </div>
