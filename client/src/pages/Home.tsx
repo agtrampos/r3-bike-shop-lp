@@ -301,6 +301,88 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Oferta Imperdível Section */}
+      <section className="py-20 bg-[#F97316] text-white overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+          <div className="absolute top-10 left-10 w-64 h-64 border-8 border-white rounded-full"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 border-8 border-white rounded-full"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-white/20 rounded-3xl blur-2xl group-hover:bg-white/30 transition-all"></div>
+              <img 
+                src="/uploads/r3.jpg" 
+                alt="Bicicleta em Oferta" 
+                className="relative w-full h-[400px] object-cover rounded-2xl shadow-2xl border-4 border-white transform group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="absolute top-4 left-4 bg-black text-white px-6 py-2 rounded-full font-black uppercase italic tracking-widest shadow-xl">
+                Promoção Ativa
+              </div>
+            </div>
+            <div>
+              <span className="inline-block bg-white text-[#F97316] px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest mb-6 shadow-lg">
+                Oportunidade Única
+              </span>
+              <h2 className="font-montserrat font-black text-4xl md:text-5xl mb-6 leading-tight uppercase italic drop-shadow-lg">
+                OFERTA IMPERDÍVEL <br />
+                <span className="text-black">NA R3 BIKE SHOP!</span>
+              </h2>
+              <div className="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 mb-8 shadow-2xl">
+                <p className="text-2xl md:text-3xl font-black mb-4">
+                  Por apenas <span className="text-black text-4xl md:text-5xl">R$ 999,00</span> no Pix
+                </p>
+                <p className="text-xl font-bold opacity-90 mb-6">
+                  Ou em 12x de <span className="text-black">R$ 116,00</span> no cartão de crédito
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-black text-[#F97316] p-1.5 rounded-full">
+                      <Star size={18} fill="currentColor" />
+                    </div>
+                    <p className="font-bold text-lg italic">Pagando no Pix, ganhe 2 brindes exclusivos!</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-black text-[#F97316] p-1.5 rounded-full">
+                      <ShoppingCart size={18} fill="currentColor" />
+                    </div>
+                    <p className="font-bold text-lg italic">Saia pedalando na hora!</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col gap-6">
+                <div className="flex items-start gap-4">
+                  <MapPin size={24} className="text-black mt-1 shrink-0" />
+                  <p className="font-bold text-lg leading-snug">
+                    Rua Conselheiro Moreira de Barros, 3809 <br />
+                    <span className="opacity-80">Zona Norte de São Paulo</span>
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href={whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 bg-black text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white hover:text-[#F97316] transition-all shadow-2xl uppercase italic group"
+                  >
+                    <MessageCircle size={22} />
+                    (11) 93906-5111
+                  </a>
+                  <a
+                    href="tel:+5511987131015"
+                    className="inline-flex items-center justify-center gap-3 bg-white/20 text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-white hover:text-black transition-all border-2 border-white/30 uppercase italic"
+                  >
+                    <Phone size={22} />
+                    (11) 98713-1015
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quem Somos Section */}
       <section className="py-24 bg-white" id="sobre">
         <div className="container mx-auto px-4">
@@ -730,8 +812,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer Melhorado */}
-      <footer className="bg-black text-white pt-24 pb-12 relative overflow-hidden">
+      {/* Footer Ajustado */}
+      <footer className="bg-black text-white pt-16 pb-8 relative overflow-hidden">
         {/* Background image with overlay */}
         <div 
           className="absolute inset-0 z-0 opacity-40 grayscale pointer-events-none"
@@ -748,14 +830,14 @@ export default function Home() {
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#F97316] to-transparent opacity-30 z-10"></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             {/* Brand Column */}
             <div className="col-span-1 md:col-span-1">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-xl bg-white p-3 border border-white/10 flex items-center justify-center scale-110 shadow-xl">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-white p-2 border border-white/10 flex items-center justify-center shadow-xl">
                   <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
                 </div>
-                <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
+                <h3 className="text-xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
                   <div className="flex gap-1">
                     <span className="text-[#F97316]">BIKE</span>
@@ -763,82 +845,82 @@ export default function Home() {
                   </div>
                 </h3>
               </div>
-              <p className="text-gray-400 text-lg mb-8 leading-relaxed italic">
+              <p className="text-gray-400 text-base mb-6 leading-relaxed italic">
                 Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
               </p>
-              <div className="flex gap-4">
-                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Instagram className="text-white group-hover:scale-110" size={22} />
+              <div className="flex gap-3">
+                <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Instagram className="text-white group-hover:scale-110" size={20} />
                 </a>
-                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Facebook className="text-white group-hover:scale-110" size={22} />
+                <a href={facebookLink} target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Facebook className="text-white group-hover:scale-110" size={20} />
                 </a>
-                <a href="#" className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
-                  <Youtube className="text-white group-hover:scale-110" size={22} />
+                <a href="#" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-[#F97316] transition-all duration-300 group">
+                  <Youtube className="text-white group-hover:scale-110" size={20} />
                 </a>
               </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Links Úteis</h4>
-              <ul className="space-y-4">
-                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors text-lg">Início</a></li>
-                <li><a href="#sobre" className="text-gray-400 hover:text-white transition-colors text-lg">Quem Somos</a></li>
-                <li><a href="#servicos" className="text-gray-400 hover:text-white transition-colors text-lg">Serviços</a></li>
-                <li><a href="#localizacao" className="text-gray-400 hover:text-white transition-colors text-lg">Localização</a></li>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Links Úteis</h4>
+              <ul className="space-y-2">
+                <li><a href="#home" className="text-gray-400 hover:text-white transition-colors text-base">Início</a></li>
+                <li><a href="#sobre" className="text-gray-400 hover:text-white transition-colors text-base">Quem Somos</a></li>
+                <li><a href="#servicos" className="text-gray-400 hover:text-white transition-colors text-base">Serviços</a></li>
+                <li><a href="#localizacao" className="text-gray-400 hover:text-white transition-colors text-base">Localização</a></li>
               </ul>
             </div>
 
             {/* Legal Links */}
             <div>
-              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Institucional</h4>
-              <ul className="space-y-4">
-                <li><Link href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Política de Privacidade</Link></li>
-                <li><Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Política de Cookies</Link></li>
-                <li><Link href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Aviso Legal</Link></li>
-                <li><Link href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-lg cursor-pointer">Termos de Serviço</Link></li>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Institucional</h4>
+              <ul className="space-y-2">
+                <li><Link href="/politica-de-privacidade" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Privacidade</Link></li>
+                <li><Link href="/cookies" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Política de Cookies</Link></li>
+                <li><Link href="/aviso-legal" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Aviso Legal</Link></li>
+                <li><Link href="/termos-de-servico" className="text-gray-400 hover:text-white transition-colors text-base cursor-pointer">Termos de Serviço</Link></li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-black text-xl mb-8 uppercase italic tracking-wider text-[#F97316]">Contato</h4>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4 text-gray-400 group">
-                  <MapPin size={22} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-lg">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP - CEP: 02430-002</span>
+              <h4 className="font-black text-lg mb-6 uppercase italic tracking-wider text-[#F97316]">Contato</h4>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-gray-400 group">
+                  <MapPin size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-base">Rua Conselheiro Moreira de Barros, 3809<br />Lauzane Paulista, SP - CEP: 02430-002</span>
                 </li>
-                <li className="flex items-start gap-4 text-gray-400 group">
-                  <Clock size={22} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="text-lg">
+                <li className="flex items-start gap-3 text-gray-400 group">
+                  <Clock size={20} className="text-[#F97316] mt-1 shrink-0 group-hover:scale-110 transition-transform" />
+                  <span className="text-base">
                     <span className="text-white font-bold">Atendimento:</span><br />
                     Segunda a sexta: 9h às 18h<br />
                     Sábado: 9h às 15h
                   </span>
                 </li>
-                <li className="flex items-center gap-4 text-gray-400 group">
-                  <Mail size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
+                <li className="flex items-center gap-3 text-gray-400 group">
+                  <Mail size={20} className="text-[#F97316] group-hover:scale-110 transition-transform" />
                   <a 
                     href="mailto:ramersonninga@yahoo.com.br" 
-                    className="bg-white/5 hover:bg-[#F97316] text-white px-4 py-2 rounded-lg text-sm font-black uppercase italic transition-all border border-white/10 hover:border-transparent flex items-center gap-2"
+                    className="bg-white/5 hover:bg-[#F97316] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all border border-white/10 hover:border-transparent flex items-center gap-2"
                   >
                     Enviar E-mail
                   </a>
                 </li>
-                <li className="flex items-center gap-4 text-gray-400 group">
-                  <Phone size={22} className="text-[#F97316] group-hover:scale-110 transition-transform" />
+                <li className="flex items-center gap-3 text-gray-400 group">
+                  <Phone size={20} className="text-[#F97316] group-hover:scale-110 transition-transform" />
                   <a 
                     href={whatsappLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-lg text-sm font-black uppercase italic transition-all flex items-center gap-2 shadow-lg"
+                    className="bg-[#25D366] hover:bg-[#128C7E] text-white px-3 py-1.5 rounded-lg text-xs font-black uppercase italic transition-all flex items-center gap-2 shadow-lg"
                   >
                     Chama no Zap
                   </a>
                 </li>
-                <li className="pt-4 border-t border-white/10">
-                  <p className="text-xs text-gray-500 font-bold uppercase tracking-tighter">
+                <li className="pt-2 border-t border-white/10">
+                  <p className="text-[10px] text-gray-500 font-bold uppercase tracking-tighter">
                     CNPJ: 54.875.734/0001-43
                   </p>
                 </li>
@@ -847,11 +929,11 @@ export default function Home() {
           </div>
 
           {/* Copyright */}
-          <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-gray-500 text-sm font-medium uppercase tracking-widest text-center md:text-left">
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-500 text-xs font-medium uppercase tracking-widest text-center md:text-left">
               © {new Date().getFullYear()} R3 BIKE SHOP - TODOS OS DIREITOS RESERVADOS
             </p>
-            <div className="flex items-center gap-2 text-gray-500 text-sm font-bold uppercase">
+            <div className="flex items-center gap-2 text-gray-500 text-xs font-bold uppercase">
               <span>Desenvolvido por</span>
               <a 
                 href="https://agenciatrampos.vercel.app" 
@@ -862,7 +944,7 @@ export default function Home() {
                 <img 
                   src="https://agenciatrampos.vercel.app/_next/image?url=%2Fimages%2Flogo%2Fagencia-trampos-logo.png&w=32&q=75" 
                   alt="Agência Trampos Logo" 
-                  className="w-5 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
+                  className="w-4 h-auto brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
                 />
                 <span>Agência Trampos</span>
               </a>
