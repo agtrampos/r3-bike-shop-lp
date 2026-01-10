@@ -78,8 +78,8 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-12 w-auto" />
-            <span className="font-montserrat font-bold text-xl text-black hidden sm:inline uppercase tracking-tight">
-              R3 Bike Shop
+            <span className="font-montserrat font-black text-xl text-black hidden sm:inline uppercase tracking-tight italic">
+              R3 BIKE <span className="text-[#F97316]">SHOP</span>
             </span>
           </a>
           <div className="flex items-center gap-4">
@@ -510,12 +510,18 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             {/* Brand Column */}
             <div className="col-span-1 md:col-span-1">
-              <a href="/" className="flex items-center gap-3 mb-6 hover:opacity-80 transition-opacity">
-                <img src={logoUrl} alt="R3 Bike Shop Logo" className="h-16 w-auto" />
-                <span className="font-montserrat font-bold text-2xl text-white uppercase tracking-tight italic">
-                  R3 <span className="text-[#F97316]">Bike</span>
-                </span>
-              </a>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-xl bg-white/5 p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
+                  <img src="/uploads/r3.jpg" alt="R3 Bike Shop" className="w-full h-full object-contain brightness-0 invert" />
+                </div>
+                <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
+                  <span className="text-white">R3</span>
+                  <div className="flex gap-1">
+                    <span className="text-[#F97316]">BIKE</span>
+                    <span className="text-[#F97316]">SHOP</span>
+                  </div>
+                </h3>
+              </div>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed italic">
                 Sua oficina especializada e loja de bicicletas na Zona Norte de São Paulo. Paixão por pedal em cada detalhe.
               </p>
