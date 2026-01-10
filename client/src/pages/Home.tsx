@@ -587,8 +587,8 @@ export default function Home() {
             {/* Brand Column */}
             <div className="col-span-1 md:col-span-1">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-xl bg-white p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
-                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain" />
+                <div className="w-16 h-16 rounded-xl bg-transparent hover:bg-white p-3 border border-white/10 flex items-center justify-center group hover:scale-110 transition-all duration-500">
+                  <img src={logoUrl} alt="R3 Bike Shop" className="w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
                 <h3 className="text-2xl font-black italic tracking-tighter flex flex-col leading-none">
                   <span className="text-white">R3</span>
