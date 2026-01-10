@@ -370,7 +370,7 @@ export default function Home() {
             </div>
             <div className="h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white relative group">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.7128!2d-46.6385!3d-23.4735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef7367b938f4f%3A0x8e5f8f5d0b9b5f5f!2sR3%20Bike%20Shop!5e0!3m2!1spt-BR!2sbr!4v1704834567890!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3659.560316935854!2d-46.650629099999996!3d-23.476319300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef70041fec2eb%3A0xce8dfaf42ae7cfc0!2sR3BikeShop!5e0!3m2!1spt-BR!2sbr!4v1768005391319!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
