@@ -1,0 +1,35 @@
+name: Legacy brand cleanup
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove legacy brand references
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          replacements=[('Trampos Studio Design','ATR Studio'),('Trampos Studio','ATR Studio'),('Agência de Trampos','ATR Studio'),('Agencia de Trampos','ATR Studio'),('Agência Trampos','ATR Studio'),('Agencia Trampos','ATR Studio'),('Trampos Design','ATR Studio'),('Trampos Digital','ATR Studio'),('agenciatrampos','atrstudio'),('agencia-trampos','atr-studio'),('TRAMPOS','ATR STUDIO'),('Trampos','ATR Studio'),('trampos','atrstudio')]
+          skip={'.git','node_modules','.next','dist','build','coverage'}
+          for p in Path('.').rglob('*'):
+            if not p.is_file() or any(x in p.parts for x in skip) or p.suffix.lower() in {'.png','.jpg','.jpeg','.gif','.webp','.ico','.woff','.woff2','.pdf','.zip'}: continue
+            try:s=p.read_text(encoding='utf-8')
+            except Exception:continue
+            n=s
+            for a,b in replacements:n=n.replace(a,b)
+            if n!=s:p.write_text(n,encoding='utf-8')
+          PY
+      - name: Commit cleanup
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: remove legacy brand references"
+          git push
